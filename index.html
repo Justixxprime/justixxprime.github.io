@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('theme');var isLight=false;if(t==='light'){isLight=true;}else if(t==='dark'){isLight=false;}else{var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{var h=new Date().getHours();isLight=(h>=6&&h<18);}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Obioma Chibueze Justice | Frontend Developer & Biochemist in Lagos</title>
+<meta name="description" content="Frontend web developer and biochemist based in Lagos, Nigeria. I build responsive, production-grade websites with HTML5, CSS3, Tailwind, JavaScript and React, and bring four years of medical laboratory science and health insurance operations experience to any technical, scientific, or operational role." />
+<meta name="keywords" content="frontend developer Lagos, web developer Nigeria, Obioma Chibueze Justice, Tailwind CSS developer, React developer Nigeria, biochemist web developer" />
+<meta name="author" content="Obioma Chibueze Justice" />
+<link rel="canonical" href="https://justixxprime.github.io/index.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Obioma Chibueze Justice | Frontend Developer & Biochemist" />
+<meta property="og:description" content="Frontend web developer and biochemist based in Lagos, Nigeria, building responsive, production-grade websites." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:url" content="https://justixxprime.github.io/index.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Obioma Chibueze Justice | Frontend Developer & Biochemist" />
+<meta name="twitter:description" content="Frontend web developer and biochemist based in Lagos, Nigeria." />
+<meta name="twitter:image" content="assets/og-image.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B0D10" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="OCJ Portfolio" />
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="mask-icon" href="assets/mask-icon.svg" color="#33E6C9" />
+<meta name="msapplication-TileColor" content="#0B0D10" />
+<meta name="msapplication-TileImage" content="assets/mstile-150.png" />
+<meta name="msapplication-config" content="browserconfig.xml" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Obioma Chibueze Justice",
+  "jobTitle": "Frontend Web Developer",
+  "url": "https://justixxprime.github.io/index.html",
+  "image": "assets/obioma-photo.jpg",
+  "email": "Obiomachibuezejustice@gmail.com",
+  "telephone": "+2349133058119",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+  "sameAs": [
+    "https://github.com/Justixxprime",
+    "https://www.linkedin.com/in/chibueze-obioma",
+    "https://x.com/iamjustixx",
+    "https://www.instagram.com/chibueze_obioma",
+    "https://www.facebook.com/share/1DjQejGRxH/"
+  ],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Abia State University" },
+  "knowsAbout": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "React", "Supabase", "Biochemistry", "Medical Laboratory Science"]
+}
+</script>
+</head>
+
+<body class="bg-ink text-paper font-serif antialiased" data-page="home">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="preloader">
+  <div class="preloader-mark">OCJ<span class="dot">.</span></div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+
+<div id="scrollProgress"></div>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+<div class="fixed top-0 left-0 w-[420px] h-[420px] rounded-full pointer-events-none z-[1] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block"
+     style="background: radial-gradient(circle, rgba(51,230,201,0.06) 0%, transparent 70%);"
+     id="cursorGlow"></div>
+
+<header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
+  <nav class="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
+    <ul class="hidden md:flex items-center gap-7 font-mono text-xs uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
+      <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
+      <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Projects</a></li>
+      <li><a href="experience.html" data-page="experience" class="nav-link flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-[11px]"></i>Experience</a></li>
+      <li><a href="blog.html" data-page="blog" class="nav-link flex items-center gap-2"><i class="fa-solid fa-pen-nib text-[11px]"></i>Blog</a></li>
+      <li><a href="contact.html" data-page="contact" class="nav-link flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px]"></i>Contact</a></li>
+    </ul>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
+        <i class="fa-solid fa-download text-[11px]"></i> Download CV
+      </a>
+    </div>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
+      <i id="iconOpen" class="fa-solid fa-bars"></i>
+      <i id="iconClose" class="fa-solid fa-xmark hidden"></i>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
+    <button id="mobileMenuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <ul class="flex flex-col gap-1 px-6 py-4 font-mono text-sm uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" class="nav-link flex items-center gap-3 py-2" data-page="about"><i class="fa-solid fa-user w-4"></i>About</a></li>
+      <li><a href="skills.html" class="nav-link flex items-center gap-3 py-2" data-page="skills"><i class="fa-solid fa-flask-vial w-4"></i>Skills</a></li>
+      <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Projects</a></li>
+      <li><a href="experience.html" class="nav-link flex items-center gap-3 py-2" data-page="experience"><i class="fa-solid fa-clock-rotate-left w-4"></i>Experience</a></li>
+      <li><a href="blog.html" class="nav-link flex items-center gap-3 py-2" data-page="blog"><i class="fa-solid fa-pen-nib w-4"></i>Blog</a></li>
+      <li><a href="contact.html" class="nav-link flex items-center gap-3 py-2" data-page="contact"><i class="fa-solid fa-envelope w-4"></i>Contact</a></li>
+      <li><a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="flex items-center gap-3 py-2 text-spectro"><i class="fa-solid fa-download w-4"></i>Download CV</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="grid-field relative pt-40 pb-20 px-6 md:px-10 overflow-hidden">
+  <div class="blob w-96 h-96 bg-spectro -top-20 -right-16"></div>
+  <div class="blob w-72 h-72 bg-assay bottom-0 -left-10" style="animation-delay:2s"></div>
+
+  <div class="max-w-6xl mx-auto relative grid md:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-5 flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-spectro"></span> Lagos, Nigeria. Open to remote & relocation.
+      </p>
+      <h1 class="font-display font-semibold text-4xl md:text-6xl leading-[1.1] mb-6">
+        Coding with <span class="gradient-text">passion</span>,<br>
+        building with <span class="text-assay">purpose</span>.
+      </h1>
+      <div class="accent-bar mb-6"></div>
+      <p class="text-paper/70 text-lg max-w-lg mb-4 leading-relaxed">
+        I'm Obioma. A frontend developer with four years in medical
+        laboratory science and health insurance operations behind me. I bring
+        the same precision to both: production-grade websites built with
+        care, and open to opportunities in tech, healthcare, or science alike.
+      </p>
+      <p class="font-mono text-sm text-assay/90 mb-10 h-6"><span id="typewriter"></span><span class="cursor-blink">|</span></p>
+
+      <div class="flex gap-4 flex-wrap mb-10">
+        <a href="contact.html" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-7 py-4 rounded-full font-medium">
+          <i class="fa-regular fa-message"></i> Let's Talk
+        </a>
+        <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-7 py-4 rounded-full hover:border-spectro hover:text-spectro">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+      </div>
+
+      <p class="font-mono text-[11px] uppercase tracking-widest text-paper/40 mb-3">Follow me</p>
+      <div class="flex gap-3">
+        <a href="https://www.facebook.com/share/1DjQejGRxH/" target="_blank" rel="noopener" aria-label="Facebook" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://x.com/iamjustixx" target="_blank" rel="noopener" aria-label="X (Twitter)" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" aria-label="Instagram" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/chibueze-obioma" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" aria-label="GitHub" class="icon-badge icon-pop w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="photo-frame animate-floatSlow">
+        <img src="assets/obioma-photo.jpg" alt="Obioma Chibueze Justice, frontend developer and biochemist" style="object-position: center 20%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHITE BAND — a little contrast, as requested ============ -->
+<section class="bg-paper text-ink py-20 px-6 md:px-10">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-ink/40 mb-5">Hello there</p>
+    <p class="text-xl md:text-2xl leading-relaxed">
+      I'm Obioma. A frontend developer with four years in medical laboratory
+      science and health insurance operations behind me, currently building
+      brand presence for a logistics company by day and shipping client
+      websites by night. I care about clean code,
+      <span class="underline decoration-spectro decoration-2 underline-offset-4">responsive design</span>,
+      and getting the details right. The same discipline that kept a lab
+      result trustworthy shows up in every line of CSS I write.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SKILLS PREVIEW — hover + click through to skills.html ============ -->
+<section class="py-24 px-6 md:px-10 bg-inkraise border-t border-white/5">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">What I bring</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl mb-14 reveal">
+      A skill set built on <span class="text-spectro">precision</span>.
+    </h2>
+
+    <div class="bento-grid">
+      <a href="skills.html" class="skill-card bento-wide bento-tall block border border-white/10 rounded-2xl p-8 bg-ink hover:border-spectro reveal flex flex-col justify-center" data-href="skills.html" tabindex="0">
+        <i class="fa-solid fa-code text-3xl text-spectro mb-4"></i>
+        <h3 class="font-display font-semibold text-xl mb-2">Frontend Development</h3>
+        <p class="text-sm text-paper/60 max-w-xs">HTML5, CSS3, Tailwind, JavaScript and React, responsive by default. This is the core of what I ship.</p>
+      </a>
+      <a href="skills.html" class="skill-card block border border-white/10 rounded-2xl p-6 bg-ink hover:border-spectro reveal reveal-delay-1 flex flex-col justify-center" data-href="skills.html" tabindex="0">
+        <i class="fa-solid fa-mobile-screen-button text-xl text-spectro mb-3"></i>
+        <h3 class="font-display font-semibold text-base mb-1.5">Responsive Design</h3>
+        <p class="text-xs text-paper/60">Holds up on every screen.</p>
+      </a>
+      <a href="skills.html" class="skill-card block border border-white/10 rounded-2xl p-6 bg-ink hover:border-spectro reveal reveal-delay-2 flex flex-col justify-center" data-href="skills.html" tabindex="0">
+        <i class="fa-brands fa-git-alt text-xl text-spectro mb-3"></i>
+        <h3 class="font-display font-semibold text-base mb-1.5">Git & Deployment</h3>
+        <p class="text-xs text-paper/60">Netlify and Vercel pipelines.</p>
+      </a>
+      <a href="skills.html" class="skill-card bento-wide block border border-white/10 rounded-2xl p-6 bg-ink hover:border-assay reveal flex items-center gap-5" data-href="skills.html" tabindex="0">
+        <i class="fa-solid fa-flask-vial text-2xl text-assay flex-shrink-0"></i>
+        <div>
+          <h3 class="font-display font-semibold text-base mb-1">Biochemical Analysis</h3>
+          <p class="text-xs text-paper/60">Four years of lab-bench precision, spectrophotometry and QA.</p>
+        </div>
+      </a>
+      <a href="skills.html" class="skill-card block border border-white/10 rounded-2xl p-6 bg-ink hover:border-assay reveal reveal-delay-1 flex flex-col justify-center" data-href="skills.html" tabindex="0">
+        <i class="fa-solid fa-circle-check text-xl text-assay mb-3"></i>
+        <h3 class="font-display font-semibold text-base mb-1.5">QA & Detail</h3>
+        <p class="text-xs text-paper/60">Regulatory-grade rigor.</p>
+      </a>
+      <a href="skills.html" class="skill-card block border border-white/10 rounded-2xl p-6 bg-ink hover:border-assay reveal reveal-delay-2 flex flex-col justify-center" data-href="skills.html" tabindex="0">
+        <i class="fa-solid fa-people-arrows text-xl text-assay mb-3"></i>
+        <h3 class="font-display font-semibold text-base mb-1.5">Client Liaison</h3>
+        <p class="text-xs text-paper/60">Clear, patient communication.</p>
+      </a>
+    </div>
+
+    <p class="text-center mt-10 reveal">
+      <a href="skills.html" class="font-mono text-xs uppercase tracking-widest text-spectro inline-flex items-center gap-2 hover:gap-3 transition-all">
+        See the full skill set <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ PROJECTS PREVIEW ============ -->
+<section class="py-24 px-6 md:px-10 border-t border-white/5">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Selected work</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl mb-14 reveal">Projects I've shipped.</h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <a href="projects.html" class="info-card group block border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal">
+        <div class="project-media h-40 flex items-end p-5" style="background-image: url('assets/work-firstexperts.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+          <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Logistics · Live</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-xl mb-2">First Experts Logistics Solutions</h3>
+          <p class="text-paper/60 text-sm mb-3">A WordPress-to-modern rebuild for a Lagos freight forwarding company.</p>
+          <span class="text-spectro font-mono text-xs inline-flex items-center gap-2 group-hover:gap-3 transition-all">View case study <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="projects.html" class="info-card group block border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1">
+        <div class="project-media h-40 flex items-end p-5" style="background-image: url('assets/work-shelemj.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
+          <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · Live</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-xl mb-2">ShelemJ Resources Ltd</h3>
+          <p class="text-paper/60 text-sm mb-3">A 14-page black-and-gold site for an African food export company.</p>
+          <span class="text-spectro font-mono text-xs inline-flex items-center gap-2 group-hover:gap-3 transition-all">View case study <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+
+    <p class="text-center text-paper/50 text-sm mb-8 reveal">
+      <i class="fa-brands fa-github mr-1"></i> Every project above is open source. Browse the code on my GitHub.
+    </p>
+
+    <p class="text-center reveal">
+      <a href="projects.html" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-7 py-4 rounded-full font-medium">
+        View All Projects <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ TECH TICKER ============ -->
+<section class="py-10 border-t border-white/5 bg-inkraise">
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="flex items-center gap-16 px-8 font-mono text-sm text-paper/40 uppercase tracking-widest">
+        <span><i class="fa-brands fa-html5 mr-2 text-orange-400"></i>HTML5</span>
+        <span><i class="fa-brands fa-css3-alt mr-2 text-blue-400"></i>CSS3</span>
+        <span><i class="fa-solid fa-wind mr-2 text-spectro"></i>Tailwind</span>
+        <span><i class="fa-brands fa-js mr-2 text-yellow-300"></i>JavaScript</span>
+        <span><i class="fa-brands fa-react mr-2 text-cyan-300"></i>React</span>
+        <span><i class="fa-brands fa-git-alt mr-2 text-red-400"></i>Git</span>
+        <span><i class="fa-brands fa-github mr-2"></i>GitHub</span>
+        <span><i class="fa-solid fa-flask-vial mr-2 text-assay"></i>Biochemistry</span>
+      </span>
+      <span class="flex items-center gap-16 px-8 font-mono text-sm text-paper/40 uppercase tracking-widest" aria-hidden="true">
+        <span><i class="fa-brands fa-html5 mr-2 text-orange-400"></i>HTML5</span>
+        <span><i class="fa-brands fa-css3-alt mr-2 text-blue-400"></i>CSS3</span>
+        <span><i class="fa-solid fa-wind mr-2 text-spectro"></i>Tailwind</span>
+        <span><i class="fa-brands fa-js mr-2 text-yellow-300"></i>JavaScript</span>
+        <span><i class="fa-brands fa-react mr-2 text-cyan-300"></i>React</span>
+        <span><i class="fa-brands fa-git-alt mr-2 text-red-400"></i>Git</span>
+        <span><i class="fa-brands fa-github mr-2"></i>GitHub</span>
+        <span><i class="fa-solid fa-flask-vial mr-2 text-assay"></i>Biochemistry</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS (placeholder, replace with real client quotes) ============ -->
+<section class="py-24 px-6 md:px-10 border-t border-white/5 overflow-hidden">
+  <div class="max-w-3xl mx-auto text-center mb-14">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Testimonials</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl reveal">What clients say.</h2>
+  </div>
+  <div class="max-w-3xl mx-auto reveal reveal-delay-1">
+    <div class="overflow-hidden">
+      <div id="testiTrack" class="flex transition-transform duration-700 ease-out">
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="testimonial-card border border-white/10 rounded-2xl p-10 bg-inkraise text-center">
+            <i class="fa-solid fa-quote-left text-spectro text-2xl mb-5"></i>
+            <p class="text-paper/80 text-lg leading-relaxed mb-6">Working with Justice was a smooth experience from start to finish. He transformed our outdated website into a modern, responsive, and professional platform that better represents our logistics business. He listened carefully to our requirements, communicated throughout the project, and delivered exactly what we needed. We have received positive feedback from both customers and partners on the new design.</p>
+            <p class="font-mono text-xs uppercase tracking-widest text-paper/40">Kareem Lateef: First Experts Logistics / Chief Executive Officer</p>
+          </div>
+        </div>
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="testimonial-card border border-white/10 rounded-2xl p-10 bg-inkraise text-center">
+            <i class="fa-solid fa-quote-left text-assay text-2xl mb-5"></i>
+            <p class="text-paper/80 text-lg leading-relaxed mb-6">Justice delivered a clean and elegant website that perfectly matched our vision. The attention to detail, responsive layout, and smooth user experience really stood out. He was patient with revisions, quick to implement feedback, and always maintained a professional attitude. I would gladly work with him again.</p>
+            <p class="font-mono text-xs uppercase tracking-widest text-paper/40">ShelemJ Resources Limited / Brand Manager Owner</p>
+          </div>
+        </div>
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="testimonial-card border border-white/10 rounded-2xl p-10 bg-inkraise text-center">
+            <i class="fa-solid fa-quote-left text-spectro text-2xl mb-5"></i>
+            <p class="text-paper/80 text-lg leading-relaxed mb-6">I wanted a website that would showcase my products beautifully, and Justice exceeded my expectations. The design feels modern, loads quickly, and works perfectly across devices. His creativity, technical skills, and commitment to quality made the entire process stress-free. I highly recommend him to anyone looking for a reliable web developer.</p>
+            <p class="font-mono text-xs uppercase tracking-widest text-paper/40">Victoria Obioma: Victorious Concept Bags / Founder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2 mt-6">
+      <button class="testi-dot w-2.5 h-2.5 rounded-full bg-spectro transition-colors" aria-label="Testimonial 1"></button>
+      <button class="testi-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-colors" aria-label="Testimonial 2"></button>
+      <button class="testi-dot w-2.5 h-2.5 rounded-full bg-white/20 transition-colors" aria-label="Testimonial 3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MILESTONES ============ -->
+<section class="py-24 px-6 md:px-10 bg-inkraise border-t border-white/5">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Milestones</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl mb-14 reveal">I take pride in the details.</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="info-card flex flex-col items-center text-center gap-4 border border-white/10 rounded-2xl p-8 bg-ink reveal">
+        <div class="w-14 h-14 rounded-full bg-spectro/10 flex items-center justify-center icon-pop"><i class="fa-solid fa-graduation-cap text-spectro text-xl"></i></div>
+        <p class="text-paper/70 text-sm">Completed frontend web development training at Digital Fortress Institute. Capstone: a deployed e-commerce site.</p>
+      </div>
+      <div class="info-card flex flex-col items-center text-center gap-4 border border-white/10 rounded-2xl p-8 bg-ink reveal reveal-delay-1">
+        <div class="w-14 h-14 rounded-full bg-assay/10 flex items-center justify-center icon-pop"><i class="fa-solid fa-globe text-assay text-xl"></i></div>
+        <p class="text-paper/70 text-sm">Independently rebuilt and deployed the First Experts Logistics Solutions corporate website.</p>
+      </div>
+      <div class="info-card flex flex-col items-center text-center gap-4 border border-white/10 rounded-2xl p-8 bg-ink reveal reveal-delay-2">
+        <div class="w-14 h-14 rounded-full bg-spectro/10 flex items-center justify-center icon-pop"><i class="fa-solid fa-briefcase text-spectro text-xl"></i></div>
+        <p class="text-paper/70 text-sm">Four live client deployments shipped end-to-end, from design through launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="grid-field py-28 px-6 md:px-10 text-center relative overflow-hidden border-t border-white/5">
+  <div class="blob w-80 h-80 bg-spectro top-0 left-1/2 -translate-x-1/2"></div>
+  <div class="relative reveal">
+    <h2 class="font-display font-semibold text-4xl md:text-6xl mb-10">Let's work <span class="gradient-text">together</span></h2>
+    <a href="contact.html" aria-label="Go to contact page" class="cta-orb-wrap group inline-flex flex-col items-center gap-4">
+      <span class="cta-orb relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-spectro text-ink text-2xl group-hover:scale-110 transition-transform duration-300">
+        <span class="cta-orb-ring"></span>
+        <span class="cta-orb-ring cta-orb-ring-2"></span>
+        <span class="cta-orb-ring cta-orb-ring-3"></span>
+        <i class="fa-solid fa-arrow-up-right-from-square cta-orb-icon relative z-10"></i>
+      </span>
+      <span class="font-mono text-xs uppercase tracking-widest text-paper/50 group-hover:text-spectro transition-colors">Start a project</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="pt-20 pb-12 px-5 sm:px-6 md:px-10 border-t border-white/10 bg-inkraise">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="footer-cta reveal flex flex-col md:flex-row items-center justify-between gap-6 mb-16 p-7 sm:p-9 rounded-2xl border border-white/10 bg-ink/60 text-center md:text-left">
+      <div>
+        <span class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-spectro mb-3"><span class="footer-status-dot"></span>Available for new projects</span>
+        <p class="font-display font-semibold text-xl sm:text-2xl">Prefer to just talk it through?</p>
+        <p class="text-paper/50 text-sm mt-2 max-w-md">WhatsApp is usually the fastest way to reach me, day or night, wherever you are in the world.</p>
+      </div>
+      <a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 bg-[#25D366] text-ink font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-full font-medium flex-shrink-0">
+        <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-10 lg:gap-x-16 gap-y-12 mb-16">
+      <div class="col-span-2 sm:col-span-2 md:col-span-1 reveal">
+        <a href="index.html" class="font-display font-semibold text-xl text-paper">OCJ<span class="text-spectro">.</span></a>
+        <p class="text-paper/50 text-sm mt-4 leading-relaxed max-w-xs">Frontend developer and biochemist, based in Lagos, Nigeria, working with clients and teams anywhere in the world. Building precise, responsive websites, and bringing the same rigor from the lab bench to the browser.</p>
+        <div class="flex gap-3 flex-wrap mt-6">
+          <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" aria-label="GitHub" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/chibueze-obioma" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/share/1DjQejGRxH/" target="_blank" rel="noopener" aria-label="Facebook" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/iamjustixx" target="_blank" rel="noopener" aria-label="X (Twitter)" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" aria-label="Instagram" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Site</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="index.html" class="nav-link hover:text-spectro transition-colors" data-page="home">Home</a></li>
+          <li><a href="about.html" class="nav-link hover:text-spectro transition-colors" data-page="about">About</a></li>
+          <li><a href="skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
+          <li><a href="projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
+          <li><a href="experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Live projects</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="https://justixxprime.github.io/boardly/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Boardly</a></li>
+          <li><a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Stride</a></li>
+          <li><a href="https://justixxprime.github.io/fernhollow-booking-website/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Fernhollow</a></li>
+          <li><a href="https://justixxprime.github.io/pulse-analytics-dashboard/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Pulse Analytics</a></li>
+          <li><a href="https://justixxprime.github.io/amani-community-trust/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Amani Community Trust</a></li>
+          <li><a href="projects.html" class="hover:text-spectro transition-colors font-medium">See all projects &rarr;</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-2 sm:col-span-1 reveal reveal-delay-3">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Contact</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="mailto:Obiomachibuezejustice@gmail.com" class="hover:text-spectro transition-colors break-all">Obiomachibuezejustice@gmail.com</a></li>
+          <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-spectro transition-colors break-all">justixxchiobi@gmail.com</a></li>
+          <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-spectro transition-colors break-all">obiomachibueze@yahoo.com</a></li>
+          <li><a href="tel:+2349133058119" class="hover:text-spectro transition-colors">+234 913 305 8119</a></li>
+          <li><a href="tel:+2348029159777" class="hover:text-spectro transition-colors">+234 802 915 9777</a></li>
+          <li><a href="tel:+2348020744436" class="hover:text-spectro transition-colors">+234 802 074 4436</a></li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria &mdash; open worldwide</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-paper/50 text-center sm:text-left">
+      <p>&copy; <span id="year"></span> <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>. All rights reserved.</p>
+      <p>Designed and built by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>, from scratch, by hand.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

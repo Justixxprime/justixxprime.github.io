@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){try{var t=localStorage.getItem('theme');var isLight=false;if(t==='light'){isLight=true;}else if(t==='dark'){isLight=false;}else{var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{var h=new Date().getHours();isLight=(h>=6&&h<18);}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects | Obioma Chibueze Justice</title>
+<meta name="description" content="Selected frontend development projects by Obioma Chibueze Justice, spanning logistics, e-commerce, hospitality, and healthcare websites." />
+<meta name="keywords" content="frontend developer projects, web design portfolio Lagos, Tailwind CSS projects, React projects" />
+<link rel="canonical" href="https://justixxprime.github.io/projects.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Projects | Obioma Chibueze Justice" />
+<meta property="og:description" content="Real client websites, built end to end: logistics, e-commerce, and healthcare." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="assets/og-image.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B0D10" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="OCJ Portfolio" />
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="mask-icon" href="assets/mask-icon.svg" color="#33E6C9" />
+<meta name="msapplication-TileColor" content="#0B0D10" />
+<meta name="msapplication-TileImage" content="assets/mstile-150.png" />
+<meta name="msapplication-config" content="browserconfig.xml" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+
+<body class="bg-ink text-paper font-serif antialiased" data-page="projects">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="preloader">
+  <div class="preloader-mark">OCJ<span class="dot">.</span></div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+
+<div id="scrollProgress"></div>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+<div class="fixed top-0 left-0 w-[420px] h-[420px] rounded-full pointer-events-none z-[1] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block"
+     style="background: radial-gradient(circle, rgba(51,230,201,0.06) 0%, transparent 70%);"
+     id="cursorGlow"></div>
+
+<header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
+  <nav class="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
+    <ul class="hidden md:flex items-center gap-7 font-mono text-xs uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
+      <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
+      <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Projects</a></li>
+      <li><a href="experience.html" data-page="experience" class="nav-link flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-[11px]"></i>Experience</a></li>
+      <li><a href="blog.html" data-page="blog" class="nav-link flex items-center gap-2"><i class="fa-solid fa-pen-nib text-[11px]"></i>Blog</a></li>
+      <li><a href="contact.html" data-page="contact" class="nav-link flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px]"></i>Contact</a></li>
+    </ul>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
+        <i class="fa-solid fa-download text-[11px]"></i> Download CV
+      </a>
+    </div>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
+      <i id="iconOpen" class="fa-solid fa-bars"></i>
+      <i id="iconClose" class="fa-solid fa-xmark hidden"></i>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
+    <button id="mobileMenuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <ul class="flex flex-col gap-1 px-6 py-4 font-mono text-sm uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" class="nav-link flex items-center gap-3 py-2" data-page="about"><i class="fa-solid fa-user w-4"></i>About</a></li>
+      <li><a href="skills.html" class="nav-link flex items-center gap-3 py-2" data-page="skills"><i class="fa-solid fa-flask-vial w-4"></i>Skills</a></li>
+      <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Projects</a></li>
+      <li><a href="experience.html" class="nav-link flex items-center gap-3 py-2" data-page="experience"><i class="fa-solid fa-clock-rotate-left w-4"></i>Experience</a></li>
+      <li><a href="blog.html" class="nav-link flex items-center gap-3 py-2" data-page="blog"><i class="fa-solid fa-pen-nib w-4"></i>Blog</a></li>
+      <li><a href="contact.html" class="nav-link flex items-center gap-3 py-2" data-page="contact"><i class="fa-solid fa-envelope w-4"></i>Contact</a></li>
+      <li><a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="flex items-center gap-3 py-2 text-spectro"><i class="fa-solid fa-download w-4"></i>Download CV</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="grid-field relative pt-40 pb-16 px-6 md:px-10 overflow-hidden">
+  <div class="blob w-72 h-72 bg-spectro -top-16 -right-10"></div>
+  <div class="blob w-56 h-56 bg-assay bottom-0 -left-10" style="animation-delay:2.2s"></div>
+  <div class="max-w-6xl mx-auto reveal relative">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4">Projects</p>
+    <h1 class="font-display font-semibold text-4xl md:text-5xl leading-tight max-w-2xl">Things I've actually shipped.</h1>
+    <div class="accent-bar"></div>
+    <p class="text-paper/60 mt-5 max-w-xl">
+      Nine builds, live right now, spanning logistics, e-commerce, healthcare,
+      hospitality, productivity software, and nonprofit work. The two earliest,
+      Cheliv Compassionate Care and the E-Commerce Showcase site, were built
+      while I was still in frontend training. Everything else was built after
+      I completed that program in January 2026.
+    </p>
+  </div>
+</section>
+
+<!--
+  NOTE FOR OBIOMA — how the live-site preview images work:
+  Each card below tries to load a real screenshot first
+  (assets/work-firstexperts.jpg, work-shelemj.jpg, work-cheliv.jpg,
+  work-ecommerce.jpg), and falls back to a plain gradient if that file
+  doesn't exist yet. So the page always looks finished, screenshot or not.
+  To add a real one: take a screenshot of the live site (a phone
+  screenshot of your laptop screen works, or a free tool like
+  https://www.screenshotmachine.com), save it with the exact filename
+  above into the assets folder, and it'll appear automatically, no code
+  changes needed.
+-->
+<section class="py-16 px-6 md:px-10 border-t border-white/5">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-firstexperts.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Logistics · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">First Experts Logistics Solutions</h3>
+        <p class="text-paper/60 mb-4">This one's my day job, in a way. The old site was a tired WordPress
+        build, so I rebuilt it from scratch: modern, responsive, and fast.
+        I handled everything from the layout to the deployment myself, on top
+        of running the company's social media day to day.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Service pages covering freight forwarding, customs clearance, air and sea cargo, and warehousing.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Full migration off WordPress to a hand coded, fast loading responsive build.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://firstexpertslogistics.com" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-shelemj.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">ShelemJ Resources Ltd</h3>
+        <p class="text-paper/60 mb-4">A 14-page site for a Lagos food export company that's been around since
+        2013. The brief was black-and-gold luxury, so I built the whole
+        architecture around that: service pages, product listings, all of it,
+        carried consistently across every single page.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>14 page site architecture spanning services, products, and company information.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A consistent black and gold luxury identity, designed to feel established, not templated.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://justixxprime.github.io/shelemj-website" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-cheliv.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Healthcare · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Cheliv Compassionate Care Plus Inc.</h3>
+        <p class="font-mono text-xs text-assay mb-3"><i class="fa-solid fa-graduation-cap mr-1"></i>Built during frontend training, 2025</p>
+        <p class="text-paper/60 mb-4">A home healthcare provider needed a site that felt trustworthy and easy
+        to navigate for people who might be stressed or in a hurry. It includes
+        program listings and a working intake form so people can reach out directly.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Disease management program listings, written to reassure, not overwhelm.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A working request information form connecting visitors directly to the care team.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">React</span>
+        </div>
+        <a href="https://chelivcompassionatecareplusinc.vercel.app" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-ecommerce.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Storefront · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">E-Commerce Showcase Site</h3>
+        <p class="font-mono text-xs text-assay mb-3"><i class="fa-solid fa-graduation-cap mr-1"></i>Built during frontend training, 2025</p>
+        <p class="text-paper/60 mb-4">I built this one to sharpen my own skills more than for a client: a
+        storefront with clean product layout and a shopping experience that
+        feels smooth on a phone as much as a laptop.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Clean, structured product grid built to demonstrate solid UI fundamentals.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A shopping experience tuned equally for phone and laptop from day one.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://victorious-concept-bags.netlify.app" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-boardly.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Productivity · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Boardly</h3>
+        <p class="text-paper/60 mb-4">A kanban style task board built and shipped as a real working
+        productivity tool, not a demo, with a calendar view, gamified levels
+        and streaks, an AI assistant baked in, and realtime multi board sync
+        powered by Supabase so changes appear instantly on every device.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Drag and drop kanban columns with a full calendar view for deadline planning.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Levels, streaks, and an AI assistant that helps plan and prioritize tasks.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Realtime multi board sync through Supabase, so your data is live across devices.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Fixed iPhone specific bugs: input lag from un-debounced search, and a datepicker that broke out of its scrollable modal.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Supabase</span>
+        </div>
+        <a href="https://justixxprime.github.io/boardly/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-stride.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Stride</h3>
+        <p class="text-paper/60 mb-4">A shoe brand concept built entirely by hand, with a complete shopping
+        experience, and no framework or backend anywhere in sight. A
+        deliberate stress test of how far plain HTML, Tailwind CSS, and hand
+        written JavaScript can carry a real e-commerce flow, from browsing to
+        checkout.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Full shopping flow: product catalog, cart, multi step checkout, and accounts.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A build your own sneaker configurator with layered, swappable part imagery.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Hand rolled cart and account state management, with zero external dependencies.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-fernhollow.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Hospitality · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Fernhollow</h3>
+        <p class="text-paper/60 mb-4">A boutique forest cabin and lodge booking site covering the whole
+        guest journey: browse stays, compare rooms, pick dates on a custom
+        built date picker, and book in three clean steps, all wrapped in a
+        calm, nature led visual identity.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Stay search, side by side room comparison, and a custom date picker for availability.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Gift cards, a rewards program, and a full blog for content and SEO.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A host facing dashboard for managing listings, plus custom on brand confirmation dialogs instead of native browser popups.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://justixxprime.github.io/fernhollow-booking-website/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-pulse.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Dashboard · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Pulse Analytics Dashboard</h3>
+        <p class="text-paper/60 mb-4">An e-commerce admin dashboard designed to look and feel like software
+        a real store owner would rely on every single day, not a static
+        mockup, with live-feeling data throughout.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>KPI summary cards and animated charts for at a glance performance tracking.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Searchable, sortable best sellers table, plus dedicated views for orders, customers, discounts, and content.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A command palette for fast, keyboard driven navigation across the whole dashboard.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://justixxprime.github.io/pulse-analytics-dashboard/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal">
+      <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-amani.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
+        <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Nonprofit · Live</span>
+      </div>
+      <div class="p-7">
+        <h3 class="font-display font-semibold text-xl mb-2">Amani Community Trust</h3>
+        <p class="text-paper/60 mb-4">An eight page nonprofit site for a community organization working
+        across education, health outreach, and economic empowerment programs
+        in East Africa, built to turn visitors into donors and volunteers,
+        not just inform them.</p>
+        <ul class="text-paper/50 text-sm space-y-2 mb-5">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Dedicated program pages, measurable impact reporting, and an ongoing news section.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>Clear donation and volunteer pathways designed around conversion, not just information.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1"></i><span>A right side sliding mobile menu, rebuilt after fixing a containing block bug that broke full screen navigation on phones.</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">CSS3</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
+          <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
+        </div>
+        <a href="https://justixxprime.github.io/amani-community-trust/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      </div>
+    </article>
+
+    <!-- ============ MORE ON GITHUB, NOT DEPLOYED YET ============ -->
+    <article class="card-pending info-card border border-white/20 rounded-2xl overflow-hidden bg-inkraise reveal md:col-span-2">
+      <div class="p-8 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+        <div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 icon-pop">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display font-semibold text-xl mb-2">A few more, not deployed yet</h3>
+          <p class="text-paper/60">There are more projects sitting in my GitHub that haven't gone live yet.
+          If you want to see the code before it's polished and hosted, that's the place to look.</p>
+        </div>
+        <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-spectro hover:text-spectro flex-shrink-0">
+          Browse GitHub <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="grid-field py-24 px-6 md:px-10 text-center relative overflow-hidden border-t border-white/5">
+  <div class="blob w-72 h-72 bg-spectro top-0 right-1/3"></div>
+  <div class="relative reveal">
+    <h2 class="font-display font-semibold text-3xl md:text-5xl mb-8">Got a project in mind? <span class="gradient-text">Let's build it.</span></h2>
+    <a href="contact.html" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-full font-medium">
+      Start a Project <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="pt-20 pb-12 px-5 sm:px-6 md:px-10 border-t border-white/10 bg-inkraise">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="footer-cta reveal flex flex-col md:flex-row items-center justify-between gap-6 mb-16 p-7 sm:p-9 rounded-2xl border border-white/10 bg-ink/60 text-center md:text-left">
+      <div>
+        <span class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-spectro mb-3"><span class="footer-status-dot"></span>Available for new projects</span>
+        <p class="font-display font-semibold text-xl sm:text-2xl">Prefer to just talk it through?</p>
+        <p class="text-paper/50 text-sm mt-2 max-w-md">WhatsApp is usually the fastest way to reach me, day or night, wherever you are in the world.</p>
+      </div>
+      <a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 bg-[#25D366] text-ink font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-full font-medium flex-shrink-0">
+        <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-10 lg:gap-x-16 gap-y-12 mb-16">
+      <div class="col-span-2 sm:col-span-2 md:col-span-1 reveal">
+        <a href="index.html" class="font-display font-semibold text-xl text-paper">OCJ<span class="text-spectro">.</span></a>
+        <p class="text-paper/50 text-sm mt-4 leading-relaxed max-w-xs">Frontend developer and biochemist, based in Lagos, Nigeria, working with clients and teams anywhere in the world. Building precise, responsive websites, and bringing the same rigor from the lab bench to the browser.</p>
+        <div class="flex gap-3 flex-wrap mt-6">
+          <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" aria-label="GitHub" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/chibueze-obioma" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/share/1DjQejGRxH/" target="_blank" rel="noopener" aria-label="Facebook" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/iamjustixx" target="_blank" rel="noopener" aria-label="X (Twitter)" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" aria-label="Instagram" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Site</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="index.html" class="nav-link hover:text-spectro transition-colors" data-page="home">Home</a></li>
+          <li><a href="about.html" class="nav-link hover:text-spectro transition-colors" data-page="about">About</a></li>
+          <li><a href="skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
+          <li><a href="projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
+          <li><a href="experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Live projects</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="https://justixxprime.github.io/boardly/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Boardly</a></li>
+          <li><a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Stride</a></li>
+          <li><a href="https://justixxprime.github.io/fernhollow-booking-website/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Fernhollow</a></li>
+          <li><a href="https://justixxprime.github.io/pulse-analytics-dashboard/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Pulse Analytics</a></li>
+          <li><a href="https://justixxprime.github.io/amani-community-trust/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Amani Community Trust</a></li>
+          <li><a href="projects.html" class="hover:text-spectro transition-colors font-medium">See all projects &rarr;</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-2 sm:col-span-1 reveal reveal-delay-3">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Contact</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="mailto:Obiomachibuezejustice@gmail.com" class="hover:text-spectro transition-colors break-all">Obiomachibuezejustice@gmail.com</a></li>
+          <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-spectro transition-colors break-all">justixxchiobi@gmail.com</a></li>
+          <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-spectro transition-colors break-all">obiomachibueze@yahoo.com</a></li>
+          <li><a href="tel:+2349133058119" class="hover:text-spectro transition-colors">+234 913 305 8119</a></li>
+          <li><a href="tel:+2348029159777" class="hover:text-spectro transition-colors">+234 802 915 9777</a></li>
+          <li><a href="tel:+2348020744436" class="hover:text-spectro transition-colors">+234 802 074 4436</a></li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria &mdash; open worldwide</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-paper/50 text-center sm:text-left">
+      <p>&copy; <span id="year"></span> <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>. All rights reserved.</p>
+      <p>Designed and built by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>, from scratch, by hand.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>
