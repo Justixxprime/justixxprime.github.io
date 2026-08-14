@@ -1,17 +1,31 @@
-# Obioma Chibueze Justice — Portfolio (v4)
+# Obioma Chibueze Justice — Portfolio (v8)
 
-A dark, seven-page portfolio built with Tailwind CSS (CDN) and Font Awesome.
+A dark (and light) portfolio built with Tailwind CSS (CDN) and Font Awesome.
 No build step, no npm install. Open index.html and it just works.
 
+If you're adding your own photos or videos, open **MEDIA.md** in this same
+folder first, it's a complete, no-jargon walkthrough.
+
 ## Pages
-    index.html               Home
-    about.html                About
-    skills.html                 Skills
-    projects.html                 Projects
-    experience.html                 Experience
+    index.html                        Home
+    about.html                        About
+    skills.html                       Skills
+    projects.html                     Projects (with category filter)
+    experience.html                   Experience
     blog.html                         Blog (listing)
-    blog-lab-to-code.html               First blog post, already written
-    contact.html                          Contact
+    blog-lab-to-code.html             Blog post
+    blog-first-freelance-client.html  Blog post
+    blog-medical-side.html            Blog post
+    blog-tailwind-workflow.html       Blog post
+    contact.html                      Contact
+    404.html                          Not-found page
+    projects/first-experts-logistics.html   Case study
+    projects/shelemj-resources.html         Case study
+    projects/stride.html                    Case study
+    projects/boardly.html                   Case study
+    projects/fernhollow.html                Case study
+    projects/pulse-analytics.html           Case study
+    projects/amani-community-trust.html     Case study
 
 ## Colors
 - ink (#0B0D10)     near-black background
@@ -31,21 +45,12 @@ and replace YOUR_ACCESS_KEY_HERE with the key they gave you. That's it,
 the form already submits without reloading the page and shows a message
 like "Message sent" right on the page.
 
-### 2. Add real screenshots of your live projects (optional but recommended)
-Right now the project cards on the Home and Projects pages use a plain
-color gradient where a screenshot would go. I can't take screenshots of
-external websites myself in this environment, so here's the fastest way
-for you to do it:
-- Open each live site in your browser
-- Use a free tool like https://www.screenshotmachine.com (paste the URL,
-  download the image), or just take a screenshot yourself
-- Save the image into the assets folder with EXACTLY this filename:
-    assets/work-firstexperts.jpg   (First Experts Logistics)
-    assets/work-shelemj.jpg        (ShelemJ Resources)
-    assets/work-cheliv.jpg         (Cheliv Compassionate Care)
-    assets/work-ecommerce.jpg      (E-Commerce Showcase)
-- That's it, no code changes needed. The moment that file exists, it
-  replaces the gradient automatically on both the Home and Projects pages.
+### 2. Add real screenshots and video (optional but recommended)
+Right now the project cards, the case study pages, and the "Screens" rows
+all use plain color gradients or dashed boxes where a real screenshot or
+video would go. I wrote a full, no-jargon, step-by-step walkthrough for
+exactly this in **MEDIA.md**, in this same folder. Open that file next,
+it covers every single placeholder on the site and exactly what to do.
 
 ### 3. Real testimonials
 The Home page has a testimonial carousel with three placeholder quotes,
@@ -72,11 +77,16 @@ Open projects.html. Find one of the existing <article class="info-card">
 blocks (search for "First Experts Logistics" to find one easily), copy
 the whole block from `<article` to `</article>`, paste it as a new block
 right before the "MORE ON GITHUB" card, and edit:
+- the `data-category="..."` attribute on the `<article>` tag itself
+  (business / ecommerce / saas / nonprofit), so it shows up correctly
+  when someone uses the filter buttons
 - the background-image filename (or leave it pointing at a file that
   doesn't exist yet, it'll just show the gradient until you add one)
 - the tag text ("Logistics · Live")
 - the heading, the paragraph, the tech tags
-- the live site link
+- the live site link, and, if you write one, a "View case study" link
+  pointing at a new file under /projects/ (copy the structure of an
+  existing case study page as a starting point)
 Then do the same thing in index.html if you want it to also show in the
 homepage preview (only the two most recent projects show there).
 
@@ -112,7 +122,7 @@ then open http://localhost:5500
     cd portfolio
     git init
     git add .
-    git commit -m "Portfolio v4"
+    git commit -m "Portfolio v8"
     git branch -M main
     git remote add origin https://github.com/Justixxprime/portfolio.git
     git push -u origin main
@@ -185,10 +195,9 @@ JavaScript fails for any reason.
 
 ## V6 additions
 
-- **Dark/light theme toggle**: a small sun/moon button in the nav. Choice
-  is remembered (localStorage), and there's a tiny inline script in every
-  page's `<head>` that applies your saved theme before the page paints, so
-  there's no flash of the wrong theme on load.
+- **Theme switcher (superseded in V7)**: originally a single sun/moon button
+  cycling dark/light/auto. See the V7 section below for the current 4-mode
+  version.
 - **Page transitions**: enabled via the native `@view-transition` CSS
   rule. Chrome and Edge (126+) will crossfade smoothly between pages;
   every other browser just does a normal navigation, no downside either way.
@@ -196,5 +205,168 @@ JavaScript fails for any reason.
   1200×630 card with your name, title, and accent colors. This is what
   shows up when the site is shared on WhatsApp, LinkedIn, X, etc., instead
   of your headshot being stretched into a link preview.
-#   j u s t i x x p r i m e . g i t h u b . i o  
- 
+
+---
+
+## V7 additions
+
+### Case studies
+Seven dedicated case study pages under `/projects/`, one per real repo
+(First Experts Logistics, ShelemJ Resources, Stride, Boardly, Fernhollow,
+Pulse Analytics Dashboard, Amani Community Trust). Each follows the same
+structure: Challenge → Approach → Design → Development → What I solved →
+Result → Screens → Links. Hero media and the three Screens boxes (desktop/
+tablet/mobile) are clearly labeled dashed placeholders, replace them with
+real screenshots or a short looping video whenever you have them.
+
+### Project filtering
+projects.html now has a category filter bar (All / Business / E-commerce /
+SaaS / Nonprofit) above the project grid, pure client-side JavaScript, no
+page reload. Every `<article>` card has a `data-category` attribute; add
+one to any new project card so it participates in the filter.
+
+### Homepage additions
+- **Trust strip**: a thin bar right under the hero (4+ Client Deployments ·
+  Responsive by Default · Lagos · Worldwide).
+- **Services section**: four cards (Business Websites, E-commerce, Landing
+  Pages, Web Interfaces) between the trust strip and the white band.
+
+### About page
+Added three "mini-cards" (Frontend Development / Scientific Background /
+Client Work) under the existing narrative and stat rings.
+
+### Skills page
+- Added a categorized "Frontend / Workflow / Professional" badge section
+  below the two radar charts.
+- Rebuilt both radar charts as a cinematic 3D version: a tilted glass
+  panel (`.radar-3d-frame`), a gradient-filled polygon that draws itself
+  in on scroll, glowing pulsing vertex nodes, and a very slow ambient
+  rotation of the background grid. All of it respects `prefers-reduced-
+  motion` (the tilt and animations turn off).
+
+### Typography
+Added `.hero-scale` / `.hero-scale-sm` utility classes using CSS
+`clamp()` for fluid, punchier headline sizing. Applied to the homepage
+hero, the final CTA, and every page's H1 (main pages + case studies).
+
+### Projects reordered
+projects.html cards are now ordered by visual impact: Stride → First
+Experts Logistics → ShelemJ → Boardly → Fernhollow → Pulse Analytics →
+Amani Community Trust → Cheliv Compassionate Care → E-Commerce Showcase.
+
+### Blog put back in the primary nav
+Blog was removed from the nav in an earlier pass and is now back, in both
+the desktop and mobile menus, on every page (it was still linked in every
+footer, but that wasn't discoverable enough).
+
+### Theme switcher, rebuilt as 4 modes
+Replaced the old 3-way cycling button with a proper dropdown, in both the
+desktop nav and the mobile menu (it was previously desktop-only):
+- **Dark** / **Light**: manual, always wins.
+- **Auto · Device**: follows the OS/browser's `prefers-color-scheme`; if
+  the OS reports no preference at all, falls back to local device time
+  (6am–6pm = light).
+- **Auto · Location**: asks for one-time geolocation permission, caches
+  the coordinates for 24 hours, and computes actual sunrise/sunset for
+  that latitude/longitude (a compact solar-declination formula, not a
+  network call) to decide light vs dark. Falls back to device time if
+  permission is denied or geolocation is unavailable.
+Choice is stored in `localStorage.themeMode` (`dark` / `light` / `device`
+/ `location`), and the inline anti-flash script in every page's `<head>`
+was updated to match, so there's still no flash of the wrong theme on load.
+
+### Light mode contrast fix
+Several `text-paper/25`, `text-paper/35`, `text-paper/55`, and
+`bg-black/50` utility classes used by newer sections had no light-mode
+override, so that text rendered as off-white on the light cream
+background and was effectively invisible. Added the missing overrides in
+`css/style.css`. If you add new sections later using an opacity variant
+not already in that list, check `css/style.css` around
+`html[data-theme="light"]` and add the matching override.
+
+### Duplicate WhatsApp button fix
+The floating WhatsApp button (bottom-left, always visible) and the
+footer's own "Chat on WhatsApp" banner could both be on screen together,
+especially on mobile, and read as two WhatsApp icons. The floating
+button now fades out automatically whenever the footer's WhatsApp CTA
+scrolls into view, and fades back in once it scrolls away.
+
+### Copy cleanup
+Removed decorative em dashes ("—" / `&mdash;`) from visible text
+throughout the site (footers, case studies, experience page), rewritten
+as separate sentences, colons, or parentheses instead.
+
+---
+
+## V8 additions
+
+### Fixed: "NaN" showing instead of numbers on the homepage
+The homepage Milestones section (the 4 big numbers: Client Deployments,
+Web Projects Shipped, Industries Served, Biochemistry Degree) was reading
+a `data-target` attribute, but the counter script in `js/main.js` was
+looking for `data-count`. Result: `NaN` instead of the number. Fixed by
+renaming the attribute in index.html to `data-count`, matching every
+other counter on the site (About page stat rings use the same pattern).
+If you ever add another animated number anywhere, use `data-count`, not
+`data-target`.
+
+### Fixed: closing the mobile menu could land you back on the homepage
+The full-screen mobile menu (`#mobileMenu`) used to live nested inside
+`<header id="siteNav">`. The header gets a `backdrop-blur` class added
+once you scroll down 40px, and `backdrop-filter` creates what's called a
+new "containing block" for anything inside it that's `position: fixed`,
+in some browsers that silently repositions a fixed element to be relative
+to the header's small box instead of the whole screen. That could make
+the menu's close button overlap with the "OCJ." logo link underneath it,
+so tapping "close" actually tapped the logo and navigated home. Fixed by
+moving `#mobileMenu` out of `<header>` entirely, it's now a sibling
+of `<header>`, a direct child of `<body>`, immune to anything the header
+does. If you ever add more fixed-position overlays, keep them as direct
+children of `<body>` for the same reason.
+
+### Nav bar: more breathing room + entrance animation
+- Height: 80px → 96px (`h-20` → `h-24`)
+- Horizontal padding: `px-10` → `px-12` on desktop
+- Gap between nav links: `gap-7` → `gap-9`
+- On page load, the whole bar drops in, and the logo, each nav link, and
+  the right-side buttons fade up in a quick stagger (all skipped for
+  visitors with `prefers-reduced-motion` on)
+
+### Blog moved from the nav to a homepage section
+With Blog gone, the nav now has 5 items (About / Skills / Work /
+Experience / Contact) instead of 6, which is part of why it feels less
+cramped. In its place, the homepage has a new "From the Blog" section
+(3 post cards + an "All posts" link) right before the final CTA. Blog is
+still linked in every page's footer either way.
+
+### Removed the "Currently expanding" line from the Skills page
+It said "Currently expanding: React & advanced JavaScript" under the web
+development radar chart, removed at your request.
+
+### Contact page: phone number now has a country code picker
+The old plain `<input type="tel">` is now a proper two-part control: a
+searchable country dropdown (23 countries, flag + name + dial code,
+Nigeria selected by default) sitting next to a plain number field. Under
+the hood, a hidden field combines them (e.g. "+234 913 305 8119") before
+the form submits to Web3Forms, so nothing on the backend needed to
+change. Styled to match the theme switcher's glass dropdown. To add more
+countries later, open `js/main.js`, search for `initCountryCodeSelect`,
+and add another `{ name, code, dial, flag }` object to the `countries`
+array near the top of that function.
+
+### Science/medical background mentioned more widely
+A few short, natural mentions were added outside the About/Skills/
+Experience pages, which is where it lived before: a line in the Projects
+page intro, and a small one-liner on the 404 page. The goal was
+"noticeable across the site," not "repeated everywhere," so it's kept
+light.
+
+### Screens placeholders now match real device shapes
+On every case study page, the three "Screens" boxes (Desktop / Tablet /
+Mobile) used to all be the exact same shape, which didn't match what a
+real screenshot of each device looks like. Fixed:
+- Desktop: 16:9 (landscape, matches a real browser window)
+- Tablet: 3:4 (portrait, matches an iPad screenshot)
+- Mobile: 9:19 (tall portrait, matches a modern phone screenshot)
+See **MEDIA.md** for exactly how to capture and drop in images at each
+of these sizes.

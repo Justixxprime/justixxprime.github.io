@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>(function(){try{var t=localStorage.getItem('theme');var isLight=false;if(t==='light'){isLight=true;}else if(t==='dark'){isLight=false;}else{var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{var h=new Date().getHours();isLight=(h>=6&&h<18);}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<script>(function(){try{var m=localStorage.getItem('themeMode')||'device';var isLight=false;function hourLight(){var h=new Date().getHours();return h>=6&&h<18;}if(m==='light'){isLight=true;}else if(m==='dark'){isLight=false;}else if(m==='device'){var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{isLight=hourLight();}}else if(m==='location'){var c=null;try{c=JSON.parse(localStorage.getItem('themeCoords'));}catch(e2){}if(c&&(Date.now()-c.t)<86400000){var rad=Math.PI/180,d=new Date(),start=Date.UTC(d.getUTCFullYear(),0,0),doy=Math.floor((d.getTime()-start)/86400000),decl=23.44*rad*Math.sin(rad*360*(284+doy)/365),latR=c.lat*rad,cosH=(Math.sin(-0.83*rad)-Math.sin(latR)*Math.sin(decl))/(Math.cos(latR)*Math.cos(decl));if(cosH>=1){isLight=false;}else if(cosH<=-1){isLight=true;}else{var hA=Math.acos(cosH)/rad,noon=12-c.lon/15,sr=noon-hA/15,ss=noon+hA/15,nowH=d.getUTCHours()+d.getUTCMinutes()/60;isLight=(nowH>=sr&&nowH<=ss);}}else{isLight=hourLight();}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About | Obioma Chibueze Justice</title>
@@ -53,14 +53,13 @@
      id="cursorGlow"></div>
 
 <header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
-  <nav class="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+  <nav class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
     <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
-    <ul class="hidden md:flex items-center gap-7 font-mono text-xs uppercase tracking-widest text-paper/80">
+    <ul class="hidden md:flex items-center gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
       <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
       <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
-      <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Projects</a></li>
+      <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Work</a></li>
       <li><a href="experience.html" data-page="experience" class="nav-link flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-[11px]"></i>Experience</a></li>
-      <li><a href="blog.html" data-page="blog" class="nav-link flex items-center gap-2"><i class="fa-solid fa-pen-nib text-[11px]"></i>Blog</a></li>
       <li><a href="contact.html" data-page="contact" class="nav-link flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px]"></i>Contact</a></li>
     </ul>
     <div class="hidden md:flex items-center gap-4">
@@ -73,19 +72,19 @@
       <i id="iconClose" class="fa-solid fa-xmark hidden"></i>
     </button>
   </nav>
-  <div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
+  </header>
+<div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
     <button id="mobileMenuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
     <ul class="flex flex-col gap-1 px-6 py-4 font-mono text-sm uppercase tracking-widest text-paper/80">
       <li><a href="about.html" class="nav-link flex items-center gap-3 py-2" data-page="about"><i class="fa-solid fa-user w-4"></i>About</a></li>
       <li><a href="skills.html" class="nav-link flex items-center gap-3 py-2" data-page="skills"><i class="fa-solid fa-flask-vial w-4"></i>Skills</a></li>
-      <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Projects</a></li>
+      <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Work</a></li>
       <li><a href="experience.html" class="nav-link flex items-center gap-3 py-2" data-page="experience"><i class="fa-solid fa-clock-rotate-left w-4"></i>Experience</a></li>
-      <li><a href="blog.html" class="nav-link flex items-center gap-3 py-2" data-page="blog"><i class="fa-solid fa-pen-nib w-4"></i>Blog</a></li>
       <li><a href="contact.html" class="nav-link flex items-center gap-3 py-2" data-page="contact"><i class="fa-solid fa-envelope w-4"></i>Contact</a></li>
       <li><a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="flex items-center gap-3 py-2 text-spectro"><i class="fa-solid fa-download w-4"></i>Download CV</a></li>
+      <li id="mobileThemeSlot" class="pt-3 mt-2 border-t border-white/10"></li>
     </ul>
   </div>
-</header>
 
 <main id="main-content">
 
@@ -94,7 +93,7 @@
   <div class="blob w-56 h-56 bg-spectro bottom-0 -right-10" style="animation-delay:2s"></div>
   <div class="max-w-6xl mx-auto reveal relative">
     <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4">About</p>
-    <h1 class="font-display font-semibold text-4xl md:text-5xl leading-tight max-w-2xl">
+    <h1 class="font-display font-semibold hero-scale-sm leading-tight max-w-2xl">
       A biochemist who learned to <span class="gradient-text">code</span>, and never lost the discipline.
     </h1>
     <div class="accent-bar"></div>
@@ -132,6 +131,24 @@
       and reviewing patient claims. That's where I learned to be careful,
       structured, and outcome-driven with every project. I hold a BSc in
       Biochemistry from Abia State University.</p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-14 grid sm:grid-cols-3 gap-6">
+    <div class="info-card border border-white/10 rounded-2xl p-7 bg-inkraise reveal">
+      <div class="w-11 h-11 rounded-full bg-spectro/10 flex items-center justify-center mb-4"><i class="fa-solid fa-code text-spectro"></i></div>
+      <h3 class="font-display font-semibold text-base mb-2">Frontend Development</h3>
+      <p class="text-paper/55 text-sm">Building responsive interfaces with HTML5, CSS3, Tailwind CSS, JavaScript and React.</p>
+    </div>
+    <div class="info-card border border-white/10 rounded-2xl p-7 bg-inkraise reveal reveal-delay-1">
+      <div class="w-11 h-11 rounded-full bg-assay/10 flex items-center justify-center mb-4"><i class="fa-solid fa-flask-vial text-assay"></i></div>
+      <h3 class="font-display font-semibold text-base mb-2">Scientific Background</h3>
+      <p class="text-paper/55 text-sm">Four years of laboratory and health insurance operations experience.</p>
+    </div>
+    <div class="info-card border border-white/10 rounded-2xl p-7 bg-inkraise reveal reveal-delay-2">
+      <div class="w-11 h-11 rounded-full bg-spectro/10 flex items-center justify-center mb-4"><i class="fa-solid fa-handshake text-spectro"></i></div>
+      <h3 class="font-display font-semibold text-base mb-2">Client Work</h3>
+      <p class="text-paper/55 text-sm">Design through development to deployment, owned end-to-end.</p>
     </div>
   </div>
 
@@ -305,12 +322,8 @@
         <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Contact</p>
         <ul class="space-y-3 text-sm text-paper/70">
           <li><a href="mailto:Obiomachibuezejustice@gmail.com" class="hover:text-spectro transition-colors break-all">Obiomachibuezejustice@gmail.com</a></li>
-          <li><a href="mailto:justixxchiobi@gmail.com" class="hover:text-spectro transition-colors break-all">justixxchiobi@gmail.com</a></li>
-          <li><a href="mailto:obiomachibueze@yahoo.com" class="hover:text-spectro transition-colors break-all">obiomachibueze@yahoo.com</a></li>
           <li><a href="tel:+2349133058119" class="hover:text-spectro transition-colors">+234 913 305 8119</a></li>
-          <li><a href="tel:+2348029159777" class="hover:text-spectro transition-colors">+234 802 915 9777</a></li>
-          <li><a href="tel:+2348020744436" class="hover:text-spectro transition-colors">+234 802 074 4436</a></li>
-          <li class="flex items-center gap-2 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria &mdash; open worldwide</li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria, open worldwide</li>
         </ul>
       </div>
     </div>

@@ -245,6 +245,20 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
+  // ---- floating WhatsApp button hides itself near the footer's own WhatsApp
+  // CTA, so the two never sit on screen together (was reading as a duplicate
+  // icon, especially on narrow mobile viewports) ----------
+  const waFloat = document.querySelector('.whatsapp-float');
+  const waFooterCta = document.querySelector('.footer-cta');
+  if (waFloat && waFooterCta && 'IntersectionObserver' in window) {
+    const waIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        waFloat.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.15 });
+    waIo.observe(waFooterCta);
+  }
+
   // ---- tilt + spotlight for cards (no extra markup needed) ----------
   if (isFinePointer && !prefersReducedMotion) {
     document.querySelectorAll('.skill-card, .info-card, .testimonial-card, .photo-frame').forEach(card => {
@@ -350,6 +364,106 @@ document.addEventListener('DOMContentLoaded', () => {
     draw();
   }
 
+  // ---- phone field: country-code selector (contact page) ----------
+  function initCountryCodeSelect() {
+    const trigger = document.getElementById('countryCodeTrigger');
+    const panel = document.getElementById('countryCodePanel');
+    const wrap = trigger ? trigger.closest('.country-code-select') : null;
+    const flagEl = document.getElementById('countryFlag');
+    const dialEl = document.getElementById('countryDialCode');
+    const numberInput = document.getElementById('phoneNumberInput');
+    const hiddenField = document.getElementById('phoneFullValue');
+    if (!trigger || !panel || !wrap || !numberInput || !hiddenField) return;
+
+    const countries = [
+      { name: 'Nigeria', code: 'NG', dial: '+234', flag: '\u{1F1F3}\u{1F1EC}' },
+      { name: 'United States', code: 'US', dial: '+1', flag: '\u{1F1FA}\u{1F1F8}' },
+      { name: 'United Kingdom', code: 'GB', dial: '+44', flag: '\u{1F1EC}\u{1F1E7}' },
+      { name: 'Canada', code: 'CA', dial: '+1', flag: '\u{1F1E8}\u{1F1E6}' },
+      { name: 'Ghana', code: 'GH', dial: '+233', flag: '\u{1F1EC}\u{1F1ED}' },
+      { name: 'Kenya', code: 'KE', dial: '+254', flag: '\u{1F1F0}\u{1F1EA}' },
+      { name: 'South Africa', code: 'ZA', dial: '+27', flag: '\u{1F1FF}\u{1F1E6}' },
+      { name: 'Egypt', code: 'EG', dial: '+20', flag: '\u{1F1EA}\u{1F1EC}' },
+      { name: 'Germany', code: 'DE', dial: '+49', flag: '\u{1F1E9}\u{1F1EA}' },
+      { name: 'France', code: 'FR', dial: '+33', flag: '\u{1F1EB}\u{1F1F7}' },
+      { name: 'Netherlands', code: 'NL', dial: '+31', flag: '\u{1F1F3}\u{1F1F1}' },
+      { name: 'Ireland', code: 'IE', dial: '+353', flag: '\u{1F1EE}\u{1F1EA}' },
+      { name: 'Spain', code: 'ES', dial: '+34', flag: '\u{1F1EA}\u{1F1F8}' },
+      { name: 'Portugal', code: 'PT', dial: '+351', flag: '\u{1F1F5}\u{1F1F9}' },
+      { name: 'United Arab Emirates', code: 'AE', dial: '+971', flag: '\u{1F1E6}\u{1F1EA}' },
+      { name: 'Saudi Arabia', code: 'SA', dial: '+966', flag: '\u{1F1F8}\u{1F1E6}' },
+      { name: 'India', code: 'IN', dial: '+91', flag: '\u{1F1EE}\u{1F1F3}' },
+      { name: 'Singapore', code: 'SG', dial: '+65', flag: '\u{1F1F8}\u{1F1EC}' },
+      { name: 'Australia', code: 'AU', dial: '+61', flag: '\u{1F1E6}\u{1F1FA}' },
+      { name: 'New Zealand', code: 'NZ', dial: '+64', flag: '\u{1F1F3}\u{1F1FF}' },
+      { name: 'Brazil', code: 'BR', dial: '+55', flag: '\u{1F1E7}\u{1F1F7}' },
+      { name: 'Japan', code: 'JP', dial: '+81', flag: '\u{1F1EF}\u{1F1F5}' },
+      { name: 'China', code: 'CN', dial: '+86', flag: '\u{1F1E8}\u{1F1F3}' },
+    ];
+
+    let selected = countries[0];
+
+    panel.innerHTML = `
+      <input type="text" class="country-code-panel-search" placeholder="Search country or code..." aria-label="Search country">
+      <div class="country-code-panel-list"></div>`;
+    const searchInput = panel.querySelector('.country-code-panel-search');
+    const listEl = panel.querySelector('.country-code-panel-list');
+
+    function renderList(filter) {
+      const f = (filter || '').trim().toLowerCase();
+      const filtered = countries.filter(c =>
+        !f || c.name.toLowerCase().includes(f) || c.dial.includes(f) || c.code.toLowerCase() === f
+      );
+      listEl.innerHTML = (filtered.length ? filtered : countries).map(c => `
+        <button type="button" class="country-option ${c.dial === selected.dial && c.name === selected.name ? 'is-active' : ''}" data-dial="${c.dial}" data-flag="${c.flag}" data-name="${c.name}">
+          <span class="flag">${c.flag}</span><span>${c.name}</span><span class="dial">${c.dial}</span>
+        </button>`).join('') || '<p class="text-paper/40 text-xs px-2 py-3">No matches</p>';
+      listEl.querySelectorAll('.country-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selected = { name: btn.dataset.name, dial: btn.dataset.dial, flag: btn.dataset.flag };
+          syncTrigger();
+          closePanel();
+        });
+      });
+    }
+
+    function syncTrigger() {
+      flagEl.textContent = selected.flag;
+      dialEl.textContent = selected.dial;
+      updateHidden();
+    }
+
+    function updateHidden() {
+      const num = numberInput.value.trim();
+      hiddenField.value = num ? `${selected.dial} ${num}` : '';
+    }
+
+    function openPanel() {
+      wrap.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      renderList('');
+      searchInput.value = '';
+      setTimeout(() => searchInput.focus(), 50);
+    }
+    function closePanel() {
+      wrap.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      wrap.classList.contains('is-open') ? closePanel() : openPanel();
+    });
+    searchInput.addEventListener('input', () => renderList(searchInput.value));
+    document.addEventListener('click', (e) => { if (!wrap.contains(e.target)) closePanel(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
+    numberInput.addEventListener('input', updateHidden);
+
+    renderList('');
+    syncTrigger();
+  }
+  initCountryCodeSelect();
+
   // ---- contact form: AJAX submit to Web3Forms with inline status + confetti ----------
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -395,64 +509,191 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- dark / light / auto (location & time based) theme toggle ----------
+  // ---- theme switcher: Dark / Light / Auto · Device / Auto · Location ----------
   function initThemeToggle() {
-    const ctaGroup = document.querySelector('#siteNav nav > div.hidden.md\\:flex');
-    if (!ctaGroup) return;
-    const btn = document.createElement('button');
-    btn.id = 'themeToggle';
-    btn.type = 'button';
+    const desktopMount = document.querySelector('#siteNav nav > div.hidden.md\\:flex');
+    const mobileMount = document.getElementById('mobileThemeSlot');
+    if (!desktopMount && !mobileMount) return;
+
     const mql = window.matchMedia('(prefers-color-scheme: light)');
     const mqd = window.matchMedia('(prefers-color-scheme: dark)');
-    function currentMode() { return localStorage.getItem('theme') || 'auto'; }
-    // "auto" respects an explicit OS preference first, since that reflects a
-    // deliberate choice. Only when the OS reports no preference at all does it
-    // fall back to the visitor's own device clock, day hours read as light,
-    // evening and night as dark, a location-aware default with no permission
-    // prompt needed.
+
+    const MODES = {
+      dark:     { label: 'Dark',            icon: 'fa-moon' },
+      light:    { label: 'Light',           icon: 'fa-sun' },
+      device:   { label: 'Auto \u00b7 Device',   icon: 'fa-mobile-screen-button' },
+      location: { label: 'Auto \u00b7 Location', icon: 'fa-location-dot' },
+    };
+    const order = ['dark', 'light', 'device', 'location'];
+
+    function currentMode() { return localStorage.getItem('themeMode') || 'device'; }
     function localHourSaysLight() {
       const h = new Date().getHours();
       return h >= 6 && h < 18;
     }
-    function effectiveIsLight(mode) {
+
+    // ---- minimal sunrise/sunset estimate from lat/lon, good enough for a
+    // day/night theme switch (not a navigation-grade ephemeris) ----------
+    function sunIsUp(lat, lon, date) {
+      const rad = Math.PI / 180;
+      const dayMs = 86400000;
+      const start = Date.UTC(date.getUTCFullYear(), 0, 0);
+      const dayOfYear = Math.floor((date.getTime() - start) / dayMs);
+      const decl = 23.44 * rad * Math.sin(rad * 360 * (284 + dayOfYear) / 365);
+      const latR = lat * rad;
+      const cosH = (Math.sin(-0.83 * rad) - Math.sin(latR) * Math.sin(decl)) / (Math.cos(latR) * Math.cos(decl));
+      if (cosH >= 1) return false;   // sun never rises
+      if (cosH <= -1) return true;   // sun never sets
+      const hourAngle = Math.acos(cosH) / rad;
+      const solarNoonUTC = 12 - lon / 15;
+      const sunriseUTC = solarNoonUTC - hourAngle / 15;
+      const sunsetUTC = solarNoonUTC + hourAngle / 15;
+      const nowUTCHours = date.getUTCHours() + date.getUTCMinutes() / 60;
+      let h = nowUTCHours;
+      if (sunriseUTC < 0 || sunsetUTC > 24) { h = ((h + 24) % 24); }
+      return h >= sunriseUTC && h <= sunsetUTC;
+    }
+
+    function getCachedCoords() {
+      try {
+        const raw = localStorage.getItem('themeCoords');
+        if (!raw) return null;
+        const c = JSON.parse(raw);
+        if (Date.now() - c.t > 24 * 60 * 60 * 1000) return null; // refresh daily
+        return c;
+      } catch (e) { return null; }
+    }
+
+    function isLightNow(mode) {
       if (mode === 'light') return true;
       if (mode === 'dark') return false;
-      if (mqd.matches) return false;
-      if (mql.matches) return true;
+      if (mode === 'device') {
+        if (mqd.matches) return false;
+        if (mql.matches) return true;
+        return localHourSaysLight();
+      }
+      if (mode === 'location') {
+        const c = getCachedCoords();
+        if (c) return sunIsUp(c.lat, c.lon, new Date());
+        return localHourSaysLight(); // fallback until/unless permission is granted
+      }
       return localHourSaysLight();
     }
-    function applyMode(mode) {
-      if (effectiveIsLight(mode)) {
+
+    function paint() {
+      const mode = currentMode();
+      if (isLightNow(mode)) {
         document.documentElement.setAttribute('data-theme', 'light');
       } else {
         document.documentElement.removeAttribute('data-theme');
       }
-      paintIcon(mode);
+      renderTriggers(mode);
     }
-    function paintIcon(mode) {
-      const icons = { dark: '<i class="fa-solid fa-moon text-xs"></i>', light: '<i class="fa-solid fa-sun text-xs"></i>', auto: '<i class="fa-solid fa-circle-half-stroke text-xs"></i>' };
-      btn.innerHTML = icons[mode] || icons.auto;
-      const labels = { dark: 'Dark theme active, click for light theme', light: 'Light theme active, click for auto theme', auto: 'Auto theme active, following your local time of day, click for dark theme' };
-      btn.setAttribute('aria-label', labels[mode] || labels.auto);
-      btn.title = labels[mode] || labels.auto;
+
+    function requestLocationThenPaint() {
+      if (!('geolocation' in navigator)) { paint(); return; }
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          localStorage.setItem('themeCoords', JSON.stringify({ lat: pos.coords.latitude, lon: pos.coords.longitude, t: Date.now() }));
+          paint();
+        },
+        () => { paint(); },  // permission denied or unavailable — silently fall back to time-of-day
+        { timeout: 8000, maximumAge: 3600000 }
+      );
     }
-    const order = ['dark', 'light', 'auto'];
-    applyMode(currentMode());
-    btn.addEventListener('click', () => {
-      const next = order[(order.indexOf(currentMode()) + 1) % order.length];
-      if (next === 'auto') { localStorage.removeItem('theme'); } else { localStorage.setItem('theme', next); }
-      applyMode(next);
-    });
+
+    function setMode(mode) {
+      localStorage.setItem('themeMode', mode);
+      if (mode === 'location' && !getCachedCoords()) {
+        requestLocationThenPaint();
+      } else {
+        paint();
+      }
+      closeAllPanels();
+    }
+
+    // ---- builds one switcher instance (trigger button + dropdown panel) ----------
+    function buildSwitcher(mount, variant) {
+      if (!mount) return null;
+      const wrap = document.createElement('div');
+      wrap.className = 'theme-switcher' + (variant === 'mobile' ? ' theme-switcher-mobile' : '');
+
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'theme-trigger';
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      const panel = document.createElement('div');
+      panel.className = 'theme-panel';
+      panel.setAttribute('role', 'menu');
+
+      order.forEach(m => {
+        const opt = document.createElement('button');
+        opt.type = 'button';
+        opt.className = 'theme-option';
+        opt.dataset.mode = m;
+        opt.setAttribute('role', 'menuitemradio');
+        opt.innerHTML = `<span class="theme-option-icon"><i class="fa-solid ${MODES[m].icon}"></i></span><span class="theme-option-label">${MODES[m].label}</span><span class="theme-option-check"><i class="fa-solid fa-check"></i></span>`;
+        opt.addEventListener('click', () => setMode(m));
+        panel.appendChild(opt);
+      });
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = wrap.classList.contains('is-open');
+        closeAllPanels();
+        if (!isOpen) { wrap.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); }
+      });
+
+      wrap.appendChild(trigger);
+      wrap.appendChild(panel);
+      mount.appendChild(wrap);
+      return { wrap, trigger, panel };
+    }
+
+    const instances = [];
+    if (desktopMount) instances.push(buildSwitcher(desktopMount, 'desktop'));
+    if (mobileMount) instances.push(buildSwitcher(mobileMount, 'mobile'));
+
+    function closeAllPanels() {
+      instances.forEach(inst => {
+        if (!inst) return;
+        inst.wrap.classList.remove('is-open');
+        inst.trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+    document.addEventListener('click', closeAllPanels);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllPanels(); });
+
+    function renderTriggers(mode) {
+      instances.forEach(inst => {
+        if (!inst) return;
+        inst.trigger.innerHTML = `<i class="fa-solid ${MODES[mode].icon}"></i><span class="theme-trigger-label">${MODES[mode].label}</span>`;
+        inst.trigger.setAttribute('aria-label', 'Theme: ' + MODES[mode].label + ', click to change');
+        inst.panel.querySelectorAll('.theme-option').forEach(opt => {
+          opt.classList.toggle('is-active', opt.dataset.mode === mode);
+        });
+      });
+    }
+
+    // if the mode is device or location and OS/system state changes, repaint live
     if (mql.addEventListener) {
-      mql.addEventListener('change', () => { if (currentMode() === 'auto') applyMode('auto'); });
-      mqd.addEventListener('change', () => { if (currentMode() === 'auto') applyMode('auto'); });
+      mql.addEventListener('change', () => { if (currentMode() === 'device') paint(); });
+      mqd.addEventListener('change', () => { if (currentMode() === 'device') paint(); });
     }
-    // re-check time of day if the tab is left open across a sunrise/sunset
-    setInterval(() => { if (currentMode() === 'auto') applyMode('auto'); }, 5 * 60 * 1000);
+    setInterval(() => { const m = currentMode(); if (m === 'device' || m === 'location') paint(); }, 5 * 60 * 1000);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && currentMode() === 'auto') applyMode('auto');
+      const m = currentMode();
+      if (!document.hidden && (m === 'device' || m === 'location')) paint();
     });
-    ctaGroup.insertBefore(btn, ctaGroup.firstChild);
+
+    // initial paint; if location mode was chosen previously and coords are stale, refresh quietly
+    if (currentMode() === 'location' && !getCachedCoords()) {
+      requestLocationThenPaint();
+    } else {
+      paint();
+    }
   }
   initThemeToggle();
 
@@ -568,5 +809,37 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closePalette(); });
   }
   initCommandPalette();
+
+  // ---- project category filter (projects.html only) ----------
+  function initProjectFilter() {
+    const bar = document.getElementById('projectFilters');
+    if (!bar) return;
+    const buttons = bar.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('article[data-category]');
+    const emptyMsg = document.getElementById('projectFilterEmpty');
+
+    function applyFilter(filter) {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+      if (emptyMsg) emptyMsg.classList.toggle('hidden', visibleCount !== 0);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('is-active', 'bg-spectro', 'text-ink', 'border-spectro');
+          b.classList.add('border-white/15', 'text-paper/70');
+        });
+        btn.classList.add('is-active', 'bg-spectro', 'text-ink', 'border-spectro');
+        btn.classList.remove('border-white/15', 'text-paper/70');
+        applyFilter(btn.dataset.filter);
+      });
+    });
+  }
+  initProjectFilter();
 
 });
