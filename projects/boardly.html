@@ -53,7 +53,7 @@
 <header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
   <nav class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
     <a href="../index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
-    <ul class="hidden md:flex items-center gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
+    <ul class="hidden md:flex items-center gap-4 xl:gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
       <li><a href="../about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
       <li><a href="../skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
       <li><a href="../projects.html" data-page="projects" class="nav-link flex items-center gap-2 text-spectro"><i class="fa-solid fa-diagram-project text-[11px]"></i>Work</a></li>
@@ -62,7 +62,7 @@
     </ul>
     <div class="hidden md:flex items-center gap-4">
       <a href="../assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
-        <i class="fa-solid fa-download text-[11px]"></i> Download CV
+        <i class="fa-solid fa-download text-[11px]"></i> <span class="hidden xl:inline">Download CV</span>
       </a>
     </div>
     <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
@@ -139,6 +139,7 @@
     <ul class="text-paper/70 space-y-3 reveal reveal-delay-1">
       <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Realtime multi-board sync and drag-and-drop task management backed by Supabase.</span></li>
 <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>An AI assistant integrated into the dashboard workflow.</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Installs as a real PWA, with an iOS install guide, camera capture, share sheet, and pull-to-refresh added since launch.</span></li>
 <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A public changelog and a fully designed 404 page, not just the core product screens.</span></li>
     </ul>
   </div>
@@ -148,6 +149,20 @@
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3 reveal">Result</p>
     <p class="text-paper/70 leading-relaxed max-w-2xl reveal reveal-delay-1">It's live at justixxprime.github.io/boardly. This one mattered to me because it forced me past HTML/CSS/JS into an actual database. Supabase, realtime sync, the whole thing had to genuinely work, not just look like it worked.</p>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-assay mb-3 reveal">What's next</p>
+    <p class="text-paper/70 leading-relaxed max-w-2xl mb-6 reveal reveal-delay-1">Boardly is still an active project, not a finished one. Right now I'm working through a full redesign of it: a proper design system instead of one-off components, a real visual identity instead of default SaaS styling, and separate workflows for the different people who'd actually use a board app differently, a freelancer, a logistics team, a tutor. Some of what's in progress:</p>
+    <ul class="text-paper/70 space-y-3 reveal reveal-delay-2">
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>A "Simple Mode" and "Smart Mode" split, so a new user sees five fields, not twenty, and can opt into the rest.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Vertical-specific workflows, logistics status columns that say "In Transit" instead of a generic "In Progress," a teaching board that understands lessons and homework.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>A command center home screen that actually answers "what needs my attention today," instead of a generic dashboard.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Motion and empty states treated as real design work, not an afterthought bolted on at the end.</span></li>
+    </ul>
+    <p class="text-paper/50 text-sm mt-6 reveal reveal-delay-3">I'm working through it in phases rather than all at once, audit first, then design system, then feature by feature, so I don't break what's already working for the people using it.</p>
   </div>
 </section>
 

@@ -159,6 +159,9 @@ noscript ~ .reveal, .no-js .reveal { opacity: 1 !important; transform: none !imp
 /* page load fade-in, applies site-wide automatically */
 body { animation: pageFadeIn .6s ease both; }
 @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+body.page-exit { animation: pageFadeOut .32s cubic-bezier(.4,0,1,1) both; }
+@keyframes pageFadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(.99); } }
+@media (prefers-reduced-motion: reduce) { body.page-exit { animation: none !important; } }
 
 /* scroll progress bar at the very top of the viewport */
 #scrollProgress {
@@ -473,26 +476,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 5px 10px; border-radius: 8px; cursor: pointer; transition: border-color .25s ease, color .25s ease;
 }
 .cmdk-hint:hover { border-color: #33E6C9; color: #33E6C9; }
-@media (min-width: 768px) { .cmdk-hint { display: flex; } }
+@media (min-width: 1280px) { .cmdk-hint { display: flex; } }
 html[data-theme="light"] .cmdk-hint { color: rgba(18,21,26,0.45); border-color: rgba(0,0,0,0.15); }
 html[data-theme="light"] .cmdk-hint:hover { border-color: #1B5E42; color: #1B5E42; }
-
-/* ---------- floating WhatsApp button ---------- */
-#waFloat {
-  position: fixed; bottom: 24px; left: 24px; z-index: 45;
-  width: 56px; height: 56px; border-radius: 9999px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.5rem; text-decoration: none;
-  box-shadow: 0 10px 30px -6px rgba(37,211,102,0.6);
-  transition: transform .3s cubic-bezier(.34,1.56,.64,1);
-}
-#waFloat:hover { transform: scale(1.1) rotate(-6deg); }
-#waFloat::before {
-  content: ''; position: absolute; inset: -6px; border-radius: 9999px;
-  border: 2px solid rgba(37,211,102,0.5); animation: waPulse 2.2s ease-out infinite;
-}
-@keyframes waPulse { 0% { transform: scale(0.9); opacity: 0.8; } 100% { transform: scale(1.5); opacity: 0; } }
 
 /* ---------- live local time ---------- */
 #localTime {
@@ -500,7 +486,7 @@ html[data-theme="light"] .cmdk-hint:hover { border-color: #1B5E42; color: #1B5E4
   font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: rgba(243,241,234,0.45);
   align-items: center; gap: 6px; white-space: nowrap;
 }
-@media (min-width: 1024px) { #localTime { display: flex; } }
+@media (min-width: 1280px) { #localTime { display: flex; } }
 #localTime .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #33E6C9; animation: statPulse 2.4s ease-in-out infinite; }
 html[data-theme="light"] #localTime { color: rgba(18,21,26,0.5); }
 
@@ -696,6 +682,15 @@ html[data-theme="light"] .form-input { color: #12151A !important; }
 html[data-theme="light"] .country-code-trigger { color: #12151A; }
 html[data-theme="light"] .country-code-trigger:hover { color: #0D6E63; }
 
+.country-code-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 26px; height: 18px; padding: 0 5px; border-radius: 4px;
+  background: rgba(51,230,201,0.14); color: #33E6C9;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .02em;
+}
+html[data-theme="light"] .country-code-badge { background: rgba(13,110,99,0.12); color: #0D6E63; }
+.country-option .country-code-badge { flex-shrink: 0; }
+
 .country-code-panel {
   position: absolute; top: calc(100% + 8px); left: 0; z-index: 70;
   width: 280px; max-width: calc(100vw - 3rem); max-height: 320px; overflow-y: auto; padding: 8px;
@@ -737,6 +732,21 @@ html[data-theme="light"] .country-option.is-active { color: #0D6E63; }
   .country-code-panel { transition: none !important; }
 }
 
+/* ---------- project category filter buttons: explicit rules so the active
+   state never depends on Tailwind's runtime class generation catching up
+   with classes toggled by JS after page load ---------- */
+.filter-btn {
+  background: transparent; color: rgba(243,241,234,0.7); border-color: rgba(255,255,255,0.15);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.filter-btn:hover { border-color: #33E6C9; color: #33E6C9; }
+.filter-btn.is-active { background: #33E6C9; color: #0B0D10; border-color: #33E6C9; }
+.filter-btn.is-active:hover { color: #0B0D10; }
+html[data-theme="light"] .filter-btn { color: rgba(18,21,26,0.7); border-color: rgba(0,0,0,0.15); }
+html[data-theme="light"] .filter-btn:hover { border-color: #0D6E63; color: #0D6E63; }
+html[data-theme="light"] .filter-btn.is-active { background: #0D6E63; color: #F3F1EA; border-color: #0D6E63; }
+html[data-theme="light"] .filter-btn.is-active:hover { color: #F3F1EA; }
+
 
 .theme-switcher { position: relative; }
 
@@ -750,6 +760,10 @@ html[data-theme="light"] .country-option.is-active { color: #0D6E63; }
 }
 .theme-trigger i { font-size: 12px; }
 .theme-trigger-label { white-space: nowrap; }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .theme-switcher:not(.theme-switcher-mobile) .theme-trigger-label { display: none; }
+  .theme-switcher:not(.theme-switcher-mobile) .theme-trigger { padding: 0 10px; }
+}
 .theme-trigger:hover { border-color: #33E6C9; color: #33E6C9; }
 .theme-switcher.is-open .theme-trigger { border-color: #33E6C9; color: #33E6C9; background: rgba(51,230,201,0.08); }
 html[data-theme="light"] .theme-trigger { border-color: rgba(0,0,0,0.15); color: #12151A; }

@@ -415,12 +415,12 @@ document.addEventListener('DOMContentLoaded', () => {
         !f || c.name.toLowerCase().includes(f) || c.dial.includes(f) || c.code.toLowerCase() === f
       );
       listEl.innerHTML = (filtered.length ? filtered : countries).map(c => `
-        <button type="button" class="country-option ${c.dial === selected.dial && c.name === selected.name ? 'is-active' : ''}" data-dial="${c.dial}" data-flag="${c.flag}" data-name="${c.name}">
-          <span class="flag">${c.flag}</span><span>${c.name}</span><span class="dial">${c.dial}</span>
+        <button type="button" class="country-option ${c.dial === selected.dial && c.name === selected.name ? 'is-active' : ''}" data-dial="${c.dial}" data-flag="${c.flag}" data-code="${c.code}" data-name="${c.name}">
+          <span class="country-code-badge">${c.code}</span><span>${c.name}</span><span class="dial">${c.dial}</span>
         </button>`).join('') || '<p class="text-paper/40 text-xs px-2 py-3">No matches</p>';
       listEl.querySelectorAll('.country-option').forEach(btn => {
         btn.addEventListener('click', () => {
-          selected = { name: btn.dataset.name, dial: btn.dataset.dial, flag: btn.dataset.flag };
+          selected = { name: btn.dataset.name, dial: btn.dataset.dial, flag: btn.dataset.flag, code: btn.dataset.code };
           syncTrigger();
           closePanel();
         });
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function syncTrigger() {
-      flagEl.textContent = selected.flag;
+      flagEl.textContent = selected.code;
       dialEl.textContent = selected.dial;
       updateHidden();
     }
@@ -717,18 +717,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initLocalTime();
 
-  // ---- floating WhatsApp button (injected once, every page) ----------
-  function initWhatsAppFloat() {
-    const a = document.createElement('a');
-    a.id = 'waFloat';
-    a.href = 'https://wa.me/2349133058119';
-    a.target = '_blank'; a.rel = 'noopener';
-    a.setAttribute('aria-label', 'Chat on WhatsApp');
-    a.innerHTML = '<i class="fa-brands fa-whatsapp"></i>';
-    document.body.appendChild(a);
-  }
-  initWhatsAppFloat();
-
   // ---- command palette (Cmd+K / Ctrl+K) ----------
   function initCommandPalette() {
     const overlay = document.createElement('div');
@@ -830,16 +818,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        buttons.forEach(b => {
-          b.classList.remove('is-active', 'bg-spectro', 'text-ink', 'border-spectro');
-          b.classList.add('border-white/15', 'text-paper/70');
-        });
-        btn.classList.add('is-active', 'bg-spectro', 'text-ink', 'border-spectro');
-        btn.classList.remove('border-white/15', 'text-paper/70');
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
         applyFilter(btn.dataset.filter);
       });
     });
   }
   initProjectFilter();
+
+  // ---- smooth cross-page transition: fade out before an internal link
+  // navigates, instead of the browser cutting straight to a blank page ----------
+  function initPageTransitions() {
+    if (prefersReducedMotion) return;
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (a.target === '_blank' || a.hasAttribute('download')) return;
+      if (a.origin && a.origin !== window.location.origin) return; // external link, no transition
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // let the user open in a new tab normally
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(() => { window.location.href = a.href; }, 260);
+    });
+  }
+  initPageTransitions();
 
 });

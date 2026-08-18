@@ -57,7 +57,7 @@
 <header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
   <nav class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
     <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
-    <ul class="hidden md:flex items-center gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
+    <ul class="hidden md:flex items-center gap-4 xl:gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
       <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
       <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
       <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Work</a></li>
@@ -66,7 +66,7 @@
     </ul>
     <div class="hidden md:flex items-center gap-4">
       <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
-        <i class="fa-solid fa-download text-[11px]"></i> Download CV
+        <i class="fa-solid fa-download text-[11px]"></i> <span class="hidden xl:inline">Download CV</span>
       </a>
     </div>
     <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
@@ -132,21 +132,21 @@
 
         <a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="info-card flex items-center gap-4 border border-white/10 rounded-xl p-5 bg-inkraise">
           <div class="icon-badge icon-pop w-11 h-11 rounded-full bg-spectro/10 text-spectro flex items-center justify-center text-lg"><i class="fa-brands fa-whatsapp"></i></div>
-          <div>
+          <div class="min-w-0">
             <p class="font-mono text-[11px] uppercase tracking-widest text-paper/50">WhatsApp</p>
             <p class="text-paper/90 text-sm">Message me directly, usually the fastest way to reach me</p>
           </div>
         </a>
         <div class="info-card flex items-center gap-4 border border-white/10 rounded-xl p-5 bg-inkraise">
           <div class="icon-badge icon-pop w-11 h-11 rounded-full bg-spectro/10 text-spectro flex items-center justify-center text-lg"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
+          <div class="min-w-0">
             <p class="font-mono text-[11px] uppercase tracking-widest text-paper/50">Location</p>
             <p class="text-paper/90 text-sm">Lagos, Nigeria, open to relocation</p>
           </div>
         </div>
         <div class="info-card flex items-center gap-4 border border-white/10 rounded-xl p-5 bg-inkraise">
           <div class="icon-badge icon-pop w-11 h-11 rounded-full bg-spectro/10 text-spectro flex items-center justify-center text-lg"><i class="fa-solid fa-clock"></i></div>
-          <div>
+          <div class="min-w-0">
             <p class="font-mono text-[11px] uppercase tracking-widest text-paper/50">Response time</p>
             <p class="text-paper/90 text-sm">Usually within 24 hours, often much sooner on WhatsApp</p>
           </div>
@@ -194,7 +194,7 @@
             <div class="phone-input-group flex items-stretch bg-black/30 border border-white/15 rounded-lg overflow-visible relative">
               <div class="country-code-select relative">
                 <button type="button" id="countryCodeTrigger" aria-haspopup="listbox" aria-expanded="false" class="country-code-trigger h-full flex items-center gap-1.5 px-3 border-r border-white/15">
-                  <span id="countryFlag" class="text-base leading-none">&#127475;&#127468;</span>
+                  <span id="countryFlag" class="country-code-badge">NG</span>
                   <span id="countryDialCode" class="font-mono text-sm">+234</span>
                   <i class="fa-solid fa-chevron-down text-[9px] opacity-50"></i>
                 </button>
