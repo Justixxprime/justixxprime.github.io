@@ -97,6 +97,7 @@
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind CSS</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Web3Forms</span>
+<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">PWA</span>
     </div>
   </div>
 </section>
@@ -115,7 +116,7 @@
     </div>
     <div class="reveal reveal-delay-1">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">The approach</p>
-      <p class="text-paper/70 leading-relaxed">Diagnosed the mobile menu bug down to its actual CSS cause rather than patching the symptom, then rebuilt the mobile navigation as a right-side sliding drawer with a dismissible overlay, and structured the rest of the site around eight clear pages: home, about, programs, impact, get involved, donate, news, and contact.</p>
+      <p class="text-paper/70 leading-relaxed">Diagnosed the mobile menu bug down to its actual CSS cause rather than patching the symptom, then rebuilt the mobile navigation as a right-side sliding drawer with a dismissible overlay. What started as an eight page site has since grown into a 22 page, fully animated, installable web app, built out in stages rather than one big rewrite.</p>
     </div>
   </div>
 </section>
@@ -124,22 +125,35 @@
   <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
     <div class="reveal">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">Design</p>
-      <p class="text-paper/70 leading-relaxed">A warm, mission-driven layout across eight pages, giving programs, impact, and donations their own dedicated space rather than compressing everything onto the homepage.</p>
+      <p class="text-paper/70 leading-relaxed">A warm, mission-driven layout across all 22 pages, with dark mode and a cinematic homepage hero: four photos slowly crossfading with a subtle zoom and, on desktop, a gentle parallax shift as you move the mouse.</p>
     </div>
     <div class="reveal reveal-delay-1">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">Development</p>
-      <p class="text-paper/70 leading-relaxed">Built with HTML, Tailwind CSS, and JavaScript, with donation and contact forms wired to Web3Forms for real email delivery once an access key is added.</p>
+      <p class="text-paper/70 leading-relaxed">Built with HTML, Tailwind CSS, and JavaScript, with every form on the site (contact, volunteer sign-up, donate, newsletter) wired to Web3Forms for real email delivery, no backend server needed.</p>
     </div>
   </div>
 </section>
 
 <section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
   <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-assay mb-3 reveal">Grown into a real 22-page app</p>
+    <p class="text-paper/70 leading-relaxed max-w-2xl mb-6 reveal reveal-delay-1">This one kept growing well past the original brief. It's now installable like a native app, with a 4-step donation flow, a volunteer portal, a field journal and news section with real calculated reading times, and a partners page. A few of the fixes along the way mattered more than any new feature:</p>
+    <ul class="text-paper/70 space-y-3 reveal reveal-delay-2">
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Removed the site's dependency on an external styling CDN by compiling its roughly 270 actually-used rules into a local file, closing off a whole class of "the page loses its layout if that connection is slow" bugs.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Fixed 12 form fields that had visible labels but weren't linked for screen readers, and 135 icon-only buttons with no accessible name.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Cut total image weight from 50MB to under 5MB by converting everything to WebP, same visual quality, over 90% smaller.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-assay text-xs mt-1.5"></i><span>Added full SEO essentials (structured data, sitemap, Open Graph tags, a real social share image) and native cross-page transitions.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16">
+  <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5 reveal">What I solved</p>
     <ul class="text-paper/70 space-y-3 reveal reveal-delay-1">
       <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Root-caused a mobile menu rendering bug to a CSS backdrop-filter containing-block issue, not just patched the symptom.</span></li>
 <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Rebuilt the mobile menu as a right-side sliding drawer with an overlay, a more predictable pattern than the previous full-screen overlay.</span></li>
-<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Eight distinct pages giving programs, impact, and donations dedicated space, wired to Web3Forms for real form delivery.</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Grew the site from 8 to 22 pages without a rewrite, adding donations, volunteering, a field journal, and impact stories as their own dedicated spaces.</span></li>
     </ul>
   </div>
 </section>
@@ -147,7 +161,7 @@
 <section class="px-6 md:px-10 pb-16">
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3 reveal">Result</p>
-    <p class="text-paper/70 leading-relaxed max-w-2xl reveal reveal-delay-1">It's live at justixxprime.github.io/amani-community-trust. Honestly the part I'm proudest of isn't a feature, it's that I didn't just patch the mobile menu bug with a quick fix and move on. I went and found the actual CSS property causing it.</p>
+    <p class="text-paper/70 leading-relaxed max-w-2xl reveal reveal-delay-1">It's live at justixxprime.github.io/amani-community-trust. Honestly the part I'm proudest of still isn't a feature, it's that when things broke (the menu, an invisible-text bug in dark mode, a scroll animation pointed at nothing) I went and found the actual cause each time instead of papering over it.</p>
   </div>
 </section>
 
