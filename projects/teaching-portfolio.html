@@ -4,12 +4,12 @@
 <script>(function(){try{var m=localStorage.getItem('themeMode')||'device';var isLight=false;function hourLight(){var h=new Date().getHours();return h>=6&&h<18;}if(m==='light'){isLight=true;}else if(m==='dark'){isLight=false;}else if(m==='device'){var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{isLight=hourLight();}}else if(m==='location'){var c=null;try{c=JSON.parse(localStorage.getItem('themeCoords'));}catch(e2){}if(c&&(Date.now()-c.t)<86400000){var rad=Math.PI/180,d=new Date(),start=Date.UTC(d.getUTCFullYear(),0,0),doy=Math.floor((d.getTime()-start)/86400000),decl=23.44*rad*Math.sin(rad*360*(284+doy)/365),latR=c.lat*rad,cosH=(Math.sin(-0.83*rad)-Math.sin(latR)*Math.sin(decl))/(Math.cos(latR)*Math.cos(decl));if(cosH>=1){isLight=false;}else if(cosH<=-1){isLight=true;}else{var hA=Math.acos(cosH)/rad,noon=12-c.lon/15,sr=noon-hA/15,ss=noon+hA/15,nowH=d.getUTCHours()+d.getUTCMinutes()/60;isLight=(nowH>=sr&&nowH<=ss);}}else{isLight=hourLight();}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stride | Case Study | Obioma Chibueze Justice</title>
-<meta name="description" content="Case study: Stride, a hand-built e-commerce concept for a sneaker brand with a full shopping experience: catalog, cart, checkout, accounts, and a Build Your Own configurator." />
-<link rel="canonical" href="https://justixxprime.github.io/projects/stride.html" />
+<title>Teaching Portfolio | Case Study | Obioma Chibueze Justice</title>
+<meta name="description" content="Case study: Teaching Portfolio, a calm, editorial portfolio site for a specialist working one to one with children with autism, Down syndrome, and developmental delays." />
+<link rel="canonical" href="https://justixxprime.github.io/projects/teaching-portfolio.html" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Stride | Case Study" />
-<meta property="og:description" content="Case study: Stride, a hand-built e-commerce concept for a sneaker brand with a full shopping experience: catalog, cart, checkout, accounts, and a Build Your Own configurator." />
+<meta property="og:title" content="Teaching Portfolio | Case Study" />
+<meta property="og:description" content="Case study: Teaching Portfolio, a calm, editorial portfolio site for a specialist working one to one with children with autism, Down syndrome, and developmental delays." />
 <meta property="og:image" content="../assets/og-image.jpg" />
 
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -89,12 +89,12 @@
 <section class="grid-field relative pt-40 pb-16 px-6 md:px-10 overflow-hidden">
   <div class="max-w-4xl mx-auto relative z-10">
     <a href="../projects.html" class="font-mono text-xs uppercase tracking-widest text-paper/50 hover:text-spectro inline-flex items-center gap-2 mb-6 reveal"><i class="fa-solid fa-arrow-left text-xs"></i> All projects</a>
-    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">E-commerce · Personal build</p>
-    <h1 class="font-display font-semibold hero-scale-sm leading-tight mb-6 reveal reveal-delay-1">Stride</h1>
-    <p class="text-paper/60 text-lg max-w-2xl leading-relaxed reveal reveal-delay-2">A shoe-brand e-commerce concept (running, trail, and lifestyle sneakers) with a full shopping experience built entirely by hand: catalog, cart, checkout, accounts, and a Build Your Own shoe configurator.</p>
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Business · Client build · In development</p>
+    <h1 class="font-display font-semibold hero-scale-sm leading-tight mb-6 reveal reveal-delay-1">Teaching Portfolio</h1>
+    <p class="text-paper/60 text-lg max-w-2xl leading-relaxed reveal reveal-delay-2">A quiet, editorial portfolio site for Jennifer Amaka, a specialist who works one to one with children and young people with autism, Down syndrome, and other developmental delays, building a plan around each child rather than a fixed program.</p>
     <div class="flex flex-wrap gap-2 mt-6 reveal reveal-delay-3">
       <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">HTML5</span>
-<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind CSS</span>
+<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Custom CSS</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Vanilla JavaScript</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">No framework, no backend</span>
     </div>
@@ -103,9 +103,7 @@
 
 <section class="px-6 md:px-10 pb-16">
   <div class="max-w-4xl mx-auto reveal">
-    <video autoplay muted loop playsinline class="w-full rounded-2xl" poster="../assets/stride-desktop.jpg">
-        <source src="../assets/stride-hero.mp4" type="video/mp4">
-      </video>
+    <img src="../assets/teaching-portfolio-desktop.jpg" alt="Teaching Portfolio homepage screenshot" class="w-full rounded-2xl">
   </div>
 </section>
 
@@ -113,11 +111,11 @@
   <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
     <div class="reveal">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">The challenge</p>
-      <p class="text-paper/70 leading-relaxed">Prove that a genuinely full e-commerce experience, not just a product grid, could be built with plain HTML, Tailwind, and hand-written JavaScript, with no framework and no backend to lean on.</p>
+      <p class="text-paper/70 leading-relaxed">Parents landing on this page are often anxious and looking for reassurance, not a sales pitch. The site had to feel calm, credible, and human first, and only then get into the specifics of the work, without ever feeling clinical or cold.</p>
     </div>
     <div class="reveal reveal-delay-1">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">The approach</p>
-      <p class="text-paper/70 leading-relaxed">Every page is a complete, standalone HTML file with no build step required to run it. State (cart, accounts, orders) is handled entirely client-side in hand-written JavaScript, structured to behave like a real storefront rather than a static mockup.</p>
+      <p class="text-paper/70 leading-relaxed">Structured the site around About, Approach, Work, Evidence, and Contact, so a visitor can move from "who is this person" to "how do they work" to "what's the proof" at their own pace, with a gated Private Portfolio area kept separate from the public case history.</p>
     </div>
   </div>
 </section>
@@ -126,11 +124,11 @@
   <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
     <div class="reveal">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">Design</p>
-      <p class="text-paper/70 leading-relaxed">A lifestyle-brand aesthetic across category, product, and configurator pages, with product photography and video slots mapped out in a dedicated media reference guide so assets drop in with predictable, consistent naming.</p>
+      <p class="text-paper/70 leading-relaxed">A warm, editorial serif headline over a soft neutral palette (cream in light mode, near-black in dark mode), built to feel like a considered personal practice rather than a template, with a light/dark toggle carried across every page.</p>
     </div>
     <div class="reveal reveal-delay-1">
       <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3">Development</p>
-      <p class="text-paper/70 leading-relaxed">Plain HTML + Tailwind CSS (via CDN, no build step) + hand-written JavaScript. Includes a full catalog, cart and checkout flow, customer accounts, and a Build Your Own configurator, all running client-side.</p>
+      <p class="text-paper/70 leading-relaxed">Plain HTML with a hand-built CSS system (separate tokens, base, components, and premium-polish stylesheets) plus hand-written JavaScript, structured across About, Approach, a Work section with dropdown navigation, an Evidence section for credibility markers, and Contact, all responsive from phone through iPad-sized tablets to desktop.</p>
     </div>
   </div>
 </section>
@@ -139,17 +137,18 @@
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5 reveal">What I solved</p>
     <ul class="text-paper/70 space-y-3 reveal reveal-delay-1">
-      <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A working cart and checkout flow with no backend, entirely client-side state management.</span></li>
-<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A Build Your Own shoe configurator alongside the standard catalog and product pages.</span></li>
-<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A documented media system (a shot-by-shot reference guide) so every image and video slot has a clear spec for what belongs in it.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A tone that reads as reassuring and credible on the very first screen, not just further down the page.</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A dropdown-based Work and Evidence navigation structure that organizes case history without overwhelming a first-time visitor.</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A gated Private Portfolio link, separate from the public-facing pages, for sensitive case material.</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>A light/dark theme toggle and fully responsive layout, tested down to tablet breakpoints.</span></li>
     </ul>
   </div>
 </section>
 
 <section class="px-6 md:px-10 pb-16">
   <div class="max-w-4xl mx-auto">
-    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3 reveal">Result</p>
-    <p class="text-paper/70 leading-relaxed max-w-2xl reveal reveal-delay-1">It's live at justixxprime.github.io/stride. I built this one mostly to prove something to myself, that I didn't need React to build a real cart and checkout flow. Turns out plain JavaScript gets you further than people assume.</p>
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-3 reveal">Where it stands</p>
+    <p class="text-paper/70 leading-relaxed max-w-2xl reveal reveal-delay-1">It's live at justixxprime.github.io/teaching-portfolio, and still being built out page by page, with real photography and evidence content being added as it becomes available. The structure and design system are locked in; what's left is mostly filling it with the client's real material.</p>
   </div>
 </section>
 
@@ -157,17 +156,17 @@
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5 reveal">Screens</p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 reveal reveal-delay-1">
-      <img src="../assets/stride-desktop.jpg" alt="Stride desktop screenshot" class="w-full h-full object-cover rounded-xl">
-      <img src="../assets/stride-tablet.jpg" alt="Stride tablet screenshot" class="w-full h-full object-cover rounded-xl">
-      <img src="../assets/stride-mobile.jpg" alt="Stride mobile screenshot" class="w-full h-full object-cover rounded-xl">
+      <img src="../assets/teaching-portfolio-desktop.jpg" alt="Teaching Portfolio desktop screenshot" class="w-full h-full object-cover rounded-xl">
+      <img src="../assets/teaching-portfolio-tablet.jpg" alt="Teaching Portfolio tablet screenshot" class="w-full h-full object-cover rounded-xl">
+      <img src="../assets/teaching-portfolio-mobile.jpg" alt="Teaching Portfolio mobile screenshot" class="w-full h-full object-cover rounded-xl">
     </div>
   </div>
 </section>
 
 <section class="px-6 md:px-10 pb-24">
   <div class="max-w-4xl mx-auto flex flex-wrap items-center gap-3 border-t border-white/5 pt-12">
-    <a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full font-medium">Live Site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-      <a href="https://github.com/Justixxprime/stride" target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-spectro hover:text-spectro"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a href="https://justixxprime.github.io/teaching-portfolio/index.html" target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full font-medium">Live Site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+      <a href="https://github.com/Justixxprime/teaching-portfolio" target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-spectro hover:text-spectro"><i class="fa-brands fa-github"></i> GitHub</a>
       <a href="../projects.html" class="font-mono text-xs uppercase tracking-widest text-paper/50 hover:text-spectro inline-flex items-center gap-2 px-2 py-3.5"><i class="fa-solid fa-arrow-left text-xs"></i> All projects</a>
   </div>
 </section>

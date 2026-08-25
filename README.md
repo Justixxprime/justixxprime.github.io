@@ -25,6 +25,8 @@ folder first, it's a complete, no-jargon walkthrough.
     projects/boardly.html                   Case study
     projects/fernhollow.html                Case study
     projects/pulse-analytics.html           Case study
+    projects/victorious-concept.html        Case study
+    projects/teaching-portfolio.html        Case study
     projects/amani-community-trust.html     Case study
 
 ## Colors

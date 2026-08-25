@@ -110,6 +110,8 @@ spaces):
 | Fernhollow | `work-fernhollow.jpg` |
 | Pulse Analytics Dashboard | `work-pulse.jpg` |
 | Amani Community Trust | `work-amani.jpg` |
+| Victorious Concept | `work-victorious.jpg` |
+| Teaching Portfolio | `work-teaching.jpg` |
 
 ### Step 4: Move it into the assets folder
 1. Open your portfolio folder on your computer (the one with `index.html`
@@ -150,6 +152,8 @@ smaller "Screens" boxes near the bottom.
    - `projects/fernhollow.html`
    - `projects/pulse-analytics.html`
    - `projects/amani-community-trust.html`
+   - `projects/victorious-concept.html`
+   - `projects/teaching-portfolio.html`
 8. Once it's open, press `Ctrl + F` (Windows) or `Cmd + F` (Mac) to
    search inside the file, and search for the word **"Hero screenshot"**.
    This jumps you straight to the right spot.
