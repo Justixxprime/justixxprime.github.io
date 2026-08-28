@@ -83,26 +83,26 @@
 
 <header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
   <nav class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
-    <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
-    <ul class="hidden md:flex items-center gap-4 xl:gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
+    <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper flex-shrink-0 mr-4">OCJ<span class="text-spectro">.</span></a>
+    <ul class="hidden lg:flex items-center gap-3 xl:gap-8 font-mono text-xs uppercase tracking-widest text-paper/80">
       <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
       <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
       <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Work</a></li>
       <li><a href="experience.html" data-page="experience" class="nav-link flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-[11px]"></i>Experience</a></li>
       <li><a href="contact.html" data-page="contact" class="nav-link flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px]"></i>Contact</a></li>
     </ul>
-    <div class="hidden md:flex items-center gap-4">
+    <div class="hidden lg:flex items-center gap-3 xl:gap-4">
       <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
         <i class="fa-solid fa-download text-[11px]"></i> <span class="hidden xl:inline">Download CV</span>
       </a>
     </div>
-    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden text-paper text-xl">
       <i id="iconOpen" class="fa-solid fa-bars"></i>
       <i id="iconClose" class="fa-solid fa-xmark hidden"></i>
     </button>
   </nav>
   </header>
-<div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
+<div id="mobileMenu" class="lg:hidden bg-inkraise border-t border-white/10">
     <button id="mobileMenuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
     <ul class="flex flex-col gap-1 px-6 py-4 font-mono text-sm uppercase tracking-widest text-paper/80">
       <li><a href="about.html" class="nav-link flex items-center gap-3 py-2" data-page="about"><i class="fa-solid fa-user w-4"></i>About</a></li>
@@ -110,6 +110,9 @@
       <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Work</a></li>
       <li><a href="experience.html" class="nav-link flex items-center gap-3 py-2" data-page="experience"><i class="fa-solid fa-clock-rotate-left w-4"></i>Experience</a></li>
       <li><a href="contact.html" class="nav-link flex items-center gap-3 py-2" data-page="contact"><i class="fa-solid fa-envelope w-4"></i>Contact</a></li>
+      <li><a href="resume.html" class="nav-link flex items-center gap-3 py-2" data-page="resume"><i class="fa-solid fa-file-lines w-4"></i>Résumé</a></li>
+      <li><a href="now.html" class="nav-link flex items-center gap-3 py-2" data-page="now"><i class="fa-solid fa-bolt w-4"></i>Now</a></li>
+      <li><a href="blog.html" class="nav-link flex items-center gap-3 py-2" data-page="blog"><i class="fa-solid fa-pen-nib w-4"></i>Blog</a></li>
       <li><a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="flex items-center gap-3 py-2 text-spectro"><i class="fa-solid fa-download w-4"></i>Download CV</a></li>
       <li id="mobileThemeSlot" class="pt-3 mt-2 border-t border-white/10"></li>
     </ul>
@@ -314,6 +317,48 @@
         View All Projects <i class="fa-solid fa-arrow-right"></i>
       </a>
     </p>
+  </div>
+</section>
+
+<!-- ============ RESUME + NOW ============ -->
+<section class="py-24 px-6 md:px-10 border-t border-white/5 relative overflow-hidden">
+  <div class="blob w-80 h-80 bg-spectro top-1/2 -left-24" style="animation-delay:1s"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Two more ways in</p>
+    <h2 class="font-display font-semibold text-3xl md:text-4xl mb-14 reveal">Read the paper trail, or see today.</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <a href="resume.html" class="info-card group relative block border border-white/10 rounded-2xl p-8 md:p-10 bg-inkraise overflow-hidden reveal">
+        <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-spectro/10 blur-2xl group-hover:bg-spectro/20 transition-colors"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-spectro/10 border border-spectro/30 flex items-center justify-center mb-6 group-hover:bg-spectro group-hover:text-ink transition-colors">
+            <i class="fa-solid fa-file-lines text-spectro text-lg group-hover:text-ink"></i>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-2">Résumé</p>
+          <h3 class="font-display font-semibold text-2xl mb-3">The full story, on the page.</h3>
+          <p class="text-paper/60 leading-relaxed mb-6">Every role, every project, every skill, laid out properly in the browser, not locked behind a download. The same content as the PDF, styled to match the rest of this site.</p>
+          <span class="text-spectro font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-3 transition-all">Read the résumé <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="now.html" class="info-card group relative block border border-white/10 rounded-2xl p-8 md:p-10 bg-inkraise overflow-hidden reveal reveal-delay-1">
+        <div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-assay/10 blur-2xl group-hover:bg-assay/20 transition-colors"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-assay/10 border border-assay/30 flex items-center justify-center mb-6 group-hover:bg-assay group-hover:text-ink transition-colors">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-assay opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-assay"></span>
+            </span>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-widest text-assay mb-2">Now</p>
+          <h3 class="font-display font-semibold text-2xl mb-3">What's actually in progress, today.</h3>
+          <p class="text-paper/60 leading-relaxed mb-6">Not a highlight reel. A short, honest, regularly-updated list of what I'm actively building this month, and what I'm open to next.</p>
+          <span class="text-assay font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-3 transition-all">See what's now <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 

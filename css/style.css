@@ -307,6 +307,9 @@ body.page-exit { animation: pageFadeOut .32s cubic-bezier(.4,0,1,1) both; }
 #mobileMenu.open ul li:nth-child(5) { transition-delay: .25s; }
 #mobileMenu.open ul li:nth-child(6) { transition-delay: .3s; }
 #mobileMenu.open ul li:nth-child(7) { transition-delay: .35s; }
+#mobileMenu.open ul li:nth-child(8) { transition-delay: .4s; }
+#mobileMenu.open ul li:nth-child(9) { transition-delay: .45s; }
+#mobileMenu.open ul li:nth-child(10) { transition-delay: .5s; }
 
 /* icon "pop" on hover, used on toolkit/skill icons */
 .icon-pop { transition: transform .3s cubic-bezier(.34,1.56,.64,1), background-color .3s ease; }
@@ -593,9 +596,9 @@ html[data-theme="light"] .radar-chart text { fill: rgba(18,21,26,0.55); }
 html[data-theme="light"] #mobileMenu { background: #F3F1EA; }
 html[data-theme="light"] #mobileMenu ul li a { border-bottom-color: rgba(0,0,0,0.06) !important; }
 #mobileMenu.open { opacity: 1; visibility: visible; transform: translateX(0); }
-#mobileMenu ul { padding: 0 10%; gap: 4px; }
+#mobileMenu ul { padding: 0 10%; gap: 2px; }
 #mobileMenu ul li a {
-  font-size: 1.4rem !important; padding: 16px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 1.15rem !important; padding: 12px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 #mobileMenuClose {
   position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 9999px;

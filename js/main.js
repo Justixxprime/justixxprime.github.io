@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- theme switcher: Dark / Light / Auto · Device / Auto · Location ----------
   function initThemeToggle() {
-    const desktopMount = document.querySelector('#siteNav nav > div.hidden.md\\:flex');
+    const desktopMount = document.querySelector('#siteNav nav > div.hidden.lg\\:flex');
     const mobileMount = document.getElementById('mobileThemeSlot');
     if (!desktopMount && !mobileMount) return;
 
@@ -699,7 +699,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- live local time (Lagos, WAT) ----------
   function initLocalTime() {
-    const ctaGroup = document.querySelector('#siteNav nav > div.hidden.md\\:flex');
+    const ctaGroup = document.querySelector('#siteNav nav > div.hidden.lg\\:flex');
     if (!ctaGroup) return;
     const el = document.createElement('span');
     el.id = 'localTime';
@@ -729,7 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(overlay);
 
     // small trigger hint in the nav
-    const ctaGroup = document.querySelector('#siteNav nav > div.hidden.md\\:flex');
+    const ctaGroup = document.querySelector('#siteNav nav > div.hidden.lg\\:flex');
     if (ctaGroup) {
       const hint = document.createElement('button');
       hint.className = 'cmdk-hint';
