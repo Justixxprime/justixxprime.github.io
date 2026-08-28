@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){try{var m=localStorage.getItem('themeMode')||'device';var isLight=false;function hourLight(){var h=new Date().getHours();return h>=6&&h<18;}if(m==='light'){isLight=true;}else if(m==='dark'){isLight=false;}else if(m==='device'){var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{isLight=hourLight();}}else if(m==='location'){var c=null;try{c=JSON.parse(localStorage.getItem('themeCoords'));}catch(e2){}if(c&&(Date.now()-c.t)<86400000){var rad=Math.PI/180,d=new Date(),start=Date.UTC(d.getUTCFullYear(),0,0),doy=Math.floor((d.getTime()-start)/86400000),decl=23.44*rad*Math.sin(rad*360*(284+doy)/365),latR=c.lat*rad,cosH=(Math.sin(-0.83*rad)-Math.sin(latR)*Math.sin(decl))/(Math.cos(latR)*Math.cos(decl));if(cosH>=1){isLight=false;}else if(cosH<=-1){isLight=true;}else{var hA=Math.acos(cosH)/rad,noon=12-c.lon/15,sr=noon-hA/15,ss=noon+hA/15,nowH=d.getUTCHours()+d.getUTCMinutes()/60;isLight=(nowH>=sr&&nowH<=ss);}}else{isLight=hourLight();}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Résumé | Obioma Chibueze Justice</title>
+<meta name="description" content="Full résumé of Obioma Chibueze Justice: frontend web developer and biochemist, ten live builds, four years in clinical laboratory science and health insurance operations." />
+<meta name="keywords" content="Obioma Chibueze Justice resume, frontend developer resume Lagos, biochemist CV Nigeria" />
+<link rel="canonical" href="https://justixxprime.github.io/resume.html" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Résumé | Obioma Chibueze Justice" />
+<meta property="og:description" content="Frontend web developer and biochemist. Ten live builds, four years in clinical laboratory science and health insurance operations." />
+<meta property="og:image" content="assets/og-image.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B0D10" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="OCJ Portfolio" />
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="mask-icon" href="assets/mask-icon.svg" color="#33E6C9" />
+<meta name="msapplication-TileColor" content="#0B0D10" />
+<meta name="msapplication-TileImage" content="assets/mstile-150.png" />
+<meta name="msapplication-config" content="browserconfig.xml" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Obioma Chibueze Justice",
+    "jobTitle": "Frontend Web Developer",
+    "url": "https://justixxprime.github.io/resume.html"
+  }
+}
+</script>
+</head>
+
+<body class="bg-ink text-paper font-serif antialiased" data-page="resume">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="preloader">
+  <div class="preloader-mark">OCJ<span class="dot">.</span></div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<div id="scrollProgress"></div>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+<div class="fixed top-0 left-0 w-[420px] h-[420px] rounded-full pointer-events-none z-[1] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block"
+     style="background: radial-gradient(circle, rgba(51,230,201,0.06) 0%, transparent 70%);"
+     id="cursorGlow"></div>
+
+<header id="siteNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/0">
+  <nav class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-24">
+    <a href="index.html" class="font-display font-semibold tracking-tight text-lg text-paper">OCJ<span class="text-spectro">.</span></a>
+    <ul class="hidden md:flex items-center gap-4 xl:gap-9 font-mono text-xs uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" data-page="about" class="nav-link flex items-center gap-2"><i class="fa-solid fa-user text-[11px]"></i>About</a></li>
+      <li><a href="skills.html" data-page="skills" class="nav-link flex items-center gap-2"><i class="fa-solid fa-flask-vial text-[11px]"></i>Skills</a></li>
+      <li><a href="projects.html" data-page="projects" class="nav-link flex items-center gap-2"><i class="fa-solid fa-diagram-project text-[11px]"></i>Work</a></li>
+      <li><a href="experience.html" data-page="experience" class="nav-link flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-[11px]"></i>Experience</a></li>
+      <li><a href="contact.html" data-page="contact" class="nav-link flex items-center gap-2"><i class="fa-solid fa-envelope text-[11px]"></i>Contact</a></li>
+    </ul>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 border border-spectro text-spectro px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-spectro hover:text-ink">
+        <i class="fa-solid fa-download text-[11px]"></i> <span class="hidden xl:inline">Download CV</span>
+      </a>
+    </div>
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-paper text-xl">
+      <i id="iconOpen" class="fa-solid fa-bars"></i>
+      <i id="iconClose" class="fa-solid fa-xmark hidden"></i>
+    </button>
+  </nav>
+  </header>
+<div id="mobileMenu" class="md:hidden bg-inkraise border-t border-white/10">
+    <button id="mobileMenuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <ul class="flex flex-col gap-1 px-6 py-4 font-mono text-sm uppercase tracking-widest text-paper/80">
+      <li><a href="about.html" class="nav-link flex items-center gap-3 py-2" data-page="about"><i class="fa-solid fa-user w-4"></i>About</a></li>
+      <li><a href="skills.html" class="nav-link flex items-center gap-3 py-2" data-page="skills"><i class="fa-solid fa-flask-vial w-4"></i>Skills</a></li>
+      <li><a href="projects.html" class="nav-link flex items-center gap-3 py-2" data-page="projects"><i class="fa-solid fa-diagram-project w-4"></i>Work</a></li>
+      <li><a href="experience.html" class="nav-link flex items-center gap-3 py-2" data-page="experience"><i class="fa-solid fa-clock-rotate-left w-4"></i>Experience</a></li>
+      <li><a href="contact.html" class="nav-link flex items-center gap-3 py-2" data-page="contact"><i class="fa-solid fa-envelope w-4"></i>Contact</a></li>
+      <li><a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="flex items-center gap-3 py-2 text-spectro"><i class="fa-solid fa-download w-4"></i>Download CV</a></li>
+      <li id="mobileThemeSlot" class="pt-3 mt-2 border-t border-white/10"></li>
+    </ul>
+  </div>
+
+<main id="main-content">
+
+<section class="grid-field relative pt-40 pb-16 px-6 md:px-10 overflow-hidden">
+  <div class="blob w-72 h-72 bg-spectro top-10 -right-16" style="animation-delay:0.4s"></div>
+  <div class="max-w-4xl mx-auto relative z-10">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Résumé</p>
+    <h1 class="font-display font-semibold hero-scale-sm leading-tight mb-4 reveal reveal-delay-1">Obioma Chibueze Justice</h1>
+    <p class="text-paper/60 text-lg max-w-2xl leading-relaxed reveal reveal-delay-2">Frontend web developer and biochemist, based in Lagos, Nigeria. The same résumé as the PDF below, just readable straight in the browser.</p>
+    <div class="flex flex-wrap gap-3 mt-8 reveal reveal-delay-3">
+      <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full font-medium"><i class="fa-solid fa-download text-xs"></i> Download PDF</a>
+      <a href="contact.html" class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-spectro hover:text-spectro">Get in touch <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-10">
+  <div class="max-w-4xl mx-auto flex flex-wrap gap-x-8 gap-y-2 text-sm text-paper/60 reveal">
+    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria &middot; open worldwide</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-spectro text-xs"></i><a href="tel:+2349133058119" class="hover:text-spectro">+234 913 305 8119</a></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-spectro text-xs"></i><a href="mailto:Obiomachibuezejustice@gmail.com" class="hover:text-spectro break-all">Obiomachibuezejustice@gmail.com</a></span>
+    <span class="flex items-center gap-2"><i class="fa-brands fa-linkedin text-spectro text-xs"></i><a href="https://www.linkedin.com/in/chibueze-obioma" target="_blank" rel="noopener" class="hover:text-spectro">linkedin.com/in/chibueze-obioma</a></span>
+    <span class="flex items-center gap-2"><i class="fa-brands fa-github text-spectro text-xs"></i><a href="https://github.com/Justixxprime" target="_blank" rel="noopener" class="hover:text-spectro">github.com/Justixxprime</a></span>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-14">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-4 reveal">Summary</p>
+    <p class="text-paper/70 leading-relaxed max-w-3xl reveal reveal-delay-1">Dual-track professional combining a BSc in Biochemistry with completed frontend web development training, equally equipped to deliver in technology and healthcare or scientific environments. Builds responsive, production-grade websites with HTML5, CSS3, Tailwind CSS, JavaScript, React, and Supabase, with ten live client and personal deployments managed end to end from design through launch, several of which now include realtime data, PWA installability, and AI-assisted features shipped as continuous post-launch updates rather than one-off builds. Brings four years of hands-on experience in clinical laboratory science and health insurance operations, including medical biochemistry and microbiology work such as biochemical assays, hematological evaluations, microbiological cultures, and phlebotomy, alongside quality assurance under regulatory SOPs and patient and provider liaison duties at a state health insurance agency. Strong analytical thinker with meticulous attention to detail, fast adaptability across disciplines, and a consistent record of independent ownership of projects and responsibilities.</p>
+    <div class="flex flex-wrap gap-2 mt-6 reveal reveal-delay-2">
+      <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Analytical Problem Solving</span>
+      <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Precision &amp; Quality Assurance</span>
+      <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Fast, Independent Learner</span>
+      <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">End-to-End Ownership</span>
+      <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Adaptability Across Industries</span>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-6 reveal">Core skills</p>
+    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-3 reveal reveal-delay-1">
+      <div>
+        <p class="text-paper/80 font-semibold text-sm mb-3">Web development</p>
+        <ul class="text-paper/60 text-sm space-y-2">
+          <li>HTML5, CSS3, Tailwind CSS, JavaScript, React</li>
+          <li>Supabase: realtime data, auth, storage, SQL migrations</li>
+          <li>PWA build-out: install prompts, offline queues, push notifications</li>
+          <li>Responsive, mobile-first, cross-browser design</li>
+          <li>Design, build, and deployment on Netlify, Vercel, GitHub Pages</li>
+          <li>Git and GitHub version control</li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-paper/80 font-semibold text-sm mb-3">Science &amp; healthcare operations</p>
+        <ul class="text-paper/60 text-sm space-y-2">
+          <li>Biochemical assays, spectrophotometry, chromatography</li>
+          <li>Hematological evaluation and microbiological culture</li>
+          <li>Phlebotomy and specimen collection and processing</li>
+          <li>Quality assurance and SOP or regulatory compliance</li>
+          <li>Patient enrollment, claims review, provider liaison</li>
+          <li>Data collection, analysis, and reporting; EHR/lab software, MS Office</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-8 reveal">Professional experience</p>
+    <div class="space-y-10">
+
+      <div class="reveal">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="font-display font-semibold text-lg">Social Media Manager</h3>
+          <span class="font-mono text-xs text-paper/40">Jun 2026 &ndash; Present</span>
+        </div>
+        <p class="text-paper/50 text-sm italic mb-3">First Experts Logistics Solutions Limited, Ikeja, Lagos</p>
+        <ul class="text-paper/70 text-sm space-y-2">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Manage and grow the company's presence across Instagram, X, Facebook, LinkedIn, and TikTok, building brand digital footprint largely from scratch.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Rebuilt the company website, firstexpertslogistics.com, from an outdated WordPress build into a modern, fully responsive site, and continue redesigning it in phases, managing design through deployment independently.</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="font-display font-semibold text-lg">Freelance Frontend Web Developer</h3>
+          <span class="font-mono text-xs text-paper/40">2025 &ndash; Present</span>
+        </div>
+        <p class="text-paper/50 text-sm italic mb-3">Self-employed, Lagos, Nigeria</p>
+        <ul class="text-paper/70 text-sm space-y-2">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Design and develop responsive, multi-page websites for independent clients across e-commerce, hospitality, brand identity, productivity software, nonprofit, and healthcare or corporate sectors.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Manage projects end to end, from layout and content structure to responsive styling, testing, and deployment, across ten live builds to date, several with continuous post-launch feature updates.</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="font-display font-semibold text-lg">NYSC, Provider Service Officer (PSO)</h3>
+          <span class="font-mono text-xs text-paper/40">May 2023 &ndash; Jul 2024</span>
+        </div>
+        <p class="text-paper/50 text-sm italic mb-3">Rauf Aregbesola Health Center &mdash; Lagos State Health Insurance Agency (LASHMA)</p>
+        <ul class="text-paper/70 text-sm space-y-2">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Served as key liaison between healthcare providers and LASHMA, ensuring timely, accurate communication on insurance protocols and patient care.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Guided patients through enrollment, eligibility, and benefits, improving access to healthcare services.</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-3">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="font-display font-semibold text-lg">Laboratory Scientist</h3>
+          <span class="font-mono text-xs text-paper/40">Apr 2021 &ndash; May 2023</span>
+        </div>
+        <p class="text-paper/50 text-sm italic mb-3">God Own Hospital, Oshodi, Lagos State</p>
+        <ul class="text-paper/70 text-sm space-y-2">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Conducted biochemical assays, hematological evaluations, and microbiological cultures to support accurate diagnoses.</span></li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Maintained laboratory equipment through routine calibration and implemented quality control measures under regulatory SOPs.</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 class="font-display font-semibold text-lg">Laboratory Intern</h3>
+          <span class="font-mono text-xs text-paper/40">Sep 2019 &ndash; Mar 2021</span>
+        </div>
+        <p class="text-paper/50 text-sm italic mb-3">Paelon Memorial Hospital, Victoria Island, Lagos</p>
+        <ul class="text-paper/70 text-sm space-y-2">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Gained hands-on experience in specimen collection, processing, and biochemical testing under senior supervision.</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-baseline justify-between gap-4 mb-2 reveal">
+      <p class="font-mono text-xs uppercase tracking-widest text-spectro">Selected projects</p>
+      <a href="projects.html" class="text-paper/50 hover:text-spectro text-sm font-mono">All projects &rarr;</a>
+    </div>
+    <p class="text-paper/60 mb-8 max-w-2xl reveal reveal-delay-1">Ten live builds. Full write-ups with screens, features, and technical detail live on the <a href="projects.html" class="text-spectro hover:underline">Projects</a> page &mdash; this is the short version.</p>
+    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-6 reveal reveal-delay-2">
+      <div>
+        <a href="projects/victorious-concept.html" class="text-paper font-semibold hover:text-spectro">Victorious Concept</a>
+        <p class="text-paper/50 text-sm">React, Vite, Supabase, Paystack &mdash; full e-commerce platform, real accounts and real checkout.</p>
+      </div>
+      <div>
+        <a href="projects/teaching-portfolio.html" class="text-paper font-semibold hover:text-spectro">Teaching Portfolio</a>
+        <p class="text-paper/50 text-sm">A calm, editorial site for a developmental-support specialist.</p>
+      </div>
+      <div>
+        <a href="projects/boardly.html" class="text-paper font-semibold hover:text-spectro">Boardly</a>
+        <p class="text-paper/50 text-sm">Kanban SaaS with a real serverless backend: Supabase Edge Functions, Resend, Termii, Slack, Google Calendar.</p>
+      </div>
+      <div>
+        <a href="projects/fernhollow.html" class="text-paper font-semibold hover:text-spectro">Fernhollow</a>
+        <p class="text-paper/50 text-sm">Nearly 30 pages, ten "no paid API" cinematic features built on real math.</p>
+      </div>
+      <div>
+        <a href="projects/first-experts-logistics.html" class="text-paper font-semibold hover:text-spectro">First Experts Logistics</a>
+        <p class="text-paper/50 text-sm">24-page rebuild off WordPress, live FX ticker, spreadsheet-powered shipment tracking.</p>
+      </div>
+      <div>
+        <a href="projects/amani-community-trust.html" class="text-paper font-semibold hover:text-spectro">Amani Community Trust</a>
+        <p class="text-paper/50 text-sm">22-page nonprofit site, installable PWA, full accessibility and SEO pass.</p>
+      </div>
+      <div>
+        <a href="projects/shelemj-resources.html" class="text-paper font-semibold hover:text-spectro">ShelemJ Resources</a>
+        <p class="text-paper/50 text-sm">21-page luxury export-brand site, structured data, real WCAG audits.</p>
+      </div>
+      <div>
+        <a href="projects/stride.html" class="text-paper font-semibold hover:text-spectro">Stride</a>
+        <p class="text-paper/50 text-sm">Full e-commerce experience with no framework at all, plain HTML and JavaScript.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-16 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-10">
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-4">Education</p>
+      <div class="mb-5">
+        <p class="font-semibold">Frontend Web Development</p>
+        <p class="text-paper/50 text-sm">Digital Fortress Institute, Lagos &middot; Completed Jan 2026</p>
+      </div>
+      <div>
+        <p class="font-semibold">BSc Biochemistry, Second Class Lower (2:2)</p>
+        <p class="text-paper/50 text-sm">Abia State University, Uturu &middot; 2014&ndash;2018</p>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-4">Certifications</p>
+      <ul class="text-paper/70 text-sm space-y-2">
+        <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>Frontend Web Development Certificate, Digital Fortress Institute, January 2026</span></li>
+        <li class="flex gap-2"><i class="fa-solid fa-check text-spectro text-xs mt-1.5"></i><span>National Youth Service Corps (NYSC) Certificate, 2023&ndash;2024</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 md:px-10 pb-24">
+  <div class="max-w-4xl mx-auto border-t border-white/5 pt-12 flex flex-wrap items-center gap-3 reveal">
+    <a href="assets/Obioma_Chibueze_Justice_CV.pdf" download class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full font-medium"><i class="fa-solid fa-download text-xs"></i> Download as PDF</a>
+    <a href="contact.html" class="btn-prime inline-flex items-center gap-2 border border-white/20 text-paper font-mono text-xs uppercase tracking-widest px-6 py-3.5 rounded-full hover:border-spectro hover:text-spectro">Get in touch <i class="fa-solid fa-arrow-right text-xs"></i></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="pt-20 pb-12 px-5 sm:px-6 md:px-10 border-t border-white/10 bg-inkraise">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="footer-cta reveal flex flex-col md:flex-row items-center justify-between gap-6 mb-16 p-7 sm:p-9 rounded-2xl border border-white/10 bg-ink/60 text-center md:text-left">
+      <div>
+        <span class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-spectro mb-3"><span class="footer-status-dot"></span>Available for new projects</span>
+        <p class="font-display font-semibold text-xl sm:text-2xl">Prefer to just talk it through?</p>
+        <p class="text-paper/50 text-sm mt-2 max-w-md">WhatsApp is usually the fastest way to reach me, day or night, wherever you are in the world.</p>
+      </div>
+      <a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="btn-prime inline-flex items-center gap-2 bg-[#25D366] text-ink font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-full font-medium flex-shrink-0">
+        <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-10 lg:gap-x-16 gap-y-12 mb-16">
+      <div class="col-span-2 sm:col-span-2 md:col-span-1 reveal">
+        <a href="index.html" class="font-display font-semibold text-xl text-paper">OCJ<span class="text-spectro">.</span></a>
+        <p class="text-paper/50 text-sm mt-4 leading-relaxed max-w-xs">Frontend developer and biochemist, based in Lagos, Nigeria, working with clients and teams anywhere in the world. Building precise, responsive websites, and bringing the same rigor from the lab bench to the browser.</p>
+        <div class="flex gap-3 flex-wrap mt-6">
+          <a href="https://github.com/Justixxprime" target="_blank" rel="noopener" aria-label="GitHub" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/chibueze-obioma" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/share/1DjQejGRxH/" target="_blank" rel="noopener" aria-label="Facebook" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/iamjustixx" target="_blank" rel="noopener" aria-label="X (Twitter)" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/chibueze_obioma" target="_blank" rel="noopener" aria-label="Instagram" class="icon-pop w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-paper/70 hover:text-ink hover:bg-spectro transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Site</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="index.html" class="nav-link hover:text-spectro transition-colors" data-page="home">Home</a></li>
+          <li><a href="about.html" class="nav-link hover:text-spectro transition-colors" data-page="about">About</a></li>
+          <li><a href="skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
+          <li><a href="projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
+          <li><a href="experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="resume.html" class="nav-link hover:text-spectro transition-colors" data-page="resume">Résumé</a></li>
+          <li><a href="now.html" class="nav-link hover:text-spectro transition-colors" data-page="now">Now</a></li>
+          <li><a href="blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Live projects</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="https://justixxprime.github.io/boardly/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Boardly</a></li>
+          <li><a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Stride</a></li>
+          <li><a href="https://justixxprime.github.io/fernhollow-booking-website/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Fernhollow</a></li>
+          <li><a href="https://justixxprime.github.io/pulse-analytics-dashboard/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Pulse Analytics</a></li>
+          <li><a href="https://justixxprime.github.io/amani-community-trust/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Amani Community Trust</a></li>
+          <li><a href="https://victorious-concept.vercel.app/" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Victorious Concept</a></li>
+          <li><a href="https://justixxprime.github.io/teaching-portfolio/index.html" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Teaching Portfolio</a></li>
+          <li><a href="projects.html" class="hover:text-spectro transition-colors font-medium">See all projects &rarr;</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-2 sm:col-span-1 reveal reveal-delay-3">
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5">Contact</p>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="mailto:Obiomachibuezejustice@gmail.com" class="hover:text-spectro transition-colors break-all">Obiomachibuezejustice@gmail.com</a></li>
+          <li><a href="tel:+2349133058119" class="hover:text-spectro transition-colors">+234 913 305 8119</a></li>
+          <li class="flex items-center gap-2 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-spectro text-xs"></i>Lagos, Nigeria, open worldwide</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-paper/50 text-center sm:text-left">
+      <p>&copy; <span id="year"></span> <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>. All rights reserved.</p>
+      <p>Designed and built by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-spectro transition-colors">Obioma Chibueze Justice</a>, from scratch, by hand.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

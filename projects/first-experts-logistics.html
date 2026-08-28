@@ -215,6 +215,20 @@
   </div>
 </section>
 
+<section class="px-6 md:px-10 pb-20 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-2 reveal">Under the hood</p>
+    <p class="text-paper/60 mb-6 max-w-2xl reveal reveal-delay-1">A few of the details I'm genuinely proud of, since they're easy to miss just from screenshots:</p>
+    <ul class="text-paper/70 space-y-4 reveal reveal-delay-2">
+      <li class="flex gap-3"><i class="fa-solid fa-arrow-trend-up text-spectro text-sm mt-1"></i><span><strong class="text-paper">A live exchange-rate ticker on the homepage.</strong> USD→NGN, EUR→NGN, and GBP→NGN, pulled from Frankfurter's real exchange-rate API with a single request, then the EUR and GBP rows derived as standard currency cross-rates from that same response instead of three separate calls. Numbers count up from zero on load instead of just appearing, cached for the session so a page refresh doesn't re-fetch needlessly, and if the fetch ever fails it shows an honest "rates unavailable" line rather than a fabricated number.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-location-dot text-spectro text-sm mt-1"></i><span><strong class="text-paper">Shipment tracking with zero backend.</strong> The Tracking page reads live data straight from a published Google Sheet exported as CSV, parsed with a small hand-written parser built to handle quoted fields with commas in them. No server, no database, just a spreadsheet the team can update directly.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-truck-fast text-spectro text-sm mt-1"></i><span><strong class="text-paper">Automatic carrier detection for tracking numbers that aren't ours.</strong> Paste in a tracking number and it's pattern-matched against the real formats UPS, FedEx, DHL Express, national postal services, Maersk, and MSC actually use, then links out to the right carrier. FedEx numbers link straight to a pre-filled result; the others link to the carrier's real tracking page rather than guessing a URL format that might be stale.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-envelope text-spectro text-sm mt-1"></i><span><strong class="text-paper">Quote and contact forms wired to Web3Forms</strong>, with the quote form capturing shipping mode, origin, destination, cargo type, weight/volume, preferred pickup date, and company details in one structured submission that lands straight in an inbox, no backend required.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-chart-line text-spectro text-sm mt-1"></i><span><strong class="text-paper">A "network pulse" widget that reuses the same tracking spreadsheet</strong> to show a genuine live count of shipments in the system, rather than a second, separate data source just for a homepage widget.</span></li>
+    </ul>
+  </div>
+</section>
+
 <section class="px-6 md:px-10 pb-20">
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5 reveal">Screens</p>
@@ -273,6 +287,8 @@
           <li><a href="../skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
           <li><a href="../projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
           <li><a href="../experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="../resume.html" class="nav-link hover:text-spectro transition-colors" data-page="resume">Résumé</a></li>
+          <li><a href="../now.html" class="nav-link hover:text-spectro transition-colors" data-page="now">Now</a></li>
           <li><a href="../blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
           <li><a href="../contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
         </ul>

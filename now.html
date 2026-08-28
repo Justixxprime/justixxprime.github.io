@@ -4,15 +4,13 @@
 <script>(function(){try{var m=localStorage.getItem('themeMode')||'device';var isLight=false;function hourLight(){var h=new Date().getHours();return h>=6&&h<18;}if(m==='light'){isLight=true;}else if(m==='dark'){isLight=false;}else if(m==='device'){var mqd=window.matchMedia('(prefers-color-scheme: dark)').matches;var mql=window.matchMedia('(prefers-color-scheme: light)').matches;if(mqd){isLight=false;}else if(mql){isLight=true;}else{isLight=hourLight();}}else if(m==='location'){var c=null;try{c=JSON.parse(localStorage.getItem('themeCoords'));}catch(e2){}if(c&&(Date.now()-c.t)<86400000){var rad=Math.PI/180,d=new Date(),start=Date.UTC(d.getUTCFullYear(),0,0),doy=Math.floor((d.getTime()-start)/86400000),decl=23.44*rad*Math.sin(rad*360*(284+doy)/365),latR=c.lat*rad,cosH=(Math.sin(-0.83*rad)-Math.sin(latR)*Math.sin(decl))/(Math.cos(latR)*Math.cos(decl));if(cosH>=1){isLight=false;}else if(cosH<=-1){isLight=true;}else{var hA=Math.acos(cosH)/rad,noon=12-c.lon/15,sr=noon-hA/15,ss=noon+hA/15,nowH=d.getUTCHours()+d.getUTCMinutes()/60;isLight=(nowH>=sr&&nowH<=ss);}}else{isLight=hourLight();}}if(isLight)document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>From the Lab Bench to the Browser | Obioma Chibueze Justice</title>
-<meta name="description" content="What four years of biochemistry taught me about writing better code, by Obioma Chibueze Justice." />
-<link rel="canonical" href="https://justixxprime.github.io/blog-lab-to-code.html" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="From the Lab Bench to the Browser" />
-<meta property="og:description" content="What four years of biochemistry taught me about writing better code." />
+<title>Now | Obioma Chibueze Justice</title>
+<meta name="description" content="What Obioma Chibueze Justice is actively working on right now, updated as things change." />
+<link rel="canonical" href="https://justixxprime.github.io/now.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Now | Obioma Chibueze Justice" />
+<meta property="og:description" content="What I'm actively working on right now." />
 <meta property="og:image" content="assets/og-image.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="assets/og-image.jpg" />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
@@ -38,13 +36,12 @@
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
-<body class="bg-ink text-paper font-serif antialiased" data-page="blog">
+<body class="bg-ink text-paper font-serif antialiased" data-page="now">
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <div id="preloader">
   <div class="preloader-mark">OCJ<span class="dot">.</span></div>
   <div class="preloader-bar"><span></span></div>
 </div>
-
 
 <div id="scrollProgress"></div>
 <div id="cursorDot"></div>
@@ -89,66 +86,65 @@
 
 <main id="main-content">
 
-<article class="pt-40 pb-24 px-6 md:px-10">
-  <div class="max-w-2xl mx-auto reveal">
-    <a href="blog.html" class="font-mono text-xs uppercase tracking-widest text-spectro inline-flex items-center gap-2 mb-8 hover:gap-3 transition-all"><i class="fa-solid fa-arrow-left"></i> Back to blog</a>
-
-    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4">Career</p>
-    <h1 class="font-display font-semibold text-3xl md:text-5xl leading-tight mb-6">From the Lab Bench to the Browser</h1>
-    <p class="text-paper/50 font-mono text-xs uppercase tracking-widest mb-12">By Obioma Chibueze Justice &nbsp;&middot;&nbsp; 6 min read</p>
-
-    <div class="prose-content text-paper/80 text-lg leading-relaxed space-y-6">
-      <p>For four years, my working life had nothing to do with code. I was in
-      hospital laboratories, running biochemical assays, calibrating equipment,
-      and writing up results that other people would use to make real decisions
-      about someone's health. There was no room for "close enough." A result
-      was either accurate or it wasn't, and if it wasn't, someone downstream
-      would be working from bad information.</p>
-
-      <p>When I moved into frontend development, I expected the two worlds to
-      feel completely separate. They don't. The habits I picked up at the
-      lab bench turned out to be exactly the habits that make someone good
-      at writing code, just applied to a different material.</p>
-
-      <h2 class="font-display font-semibold text-2xl text-paper mt-10 mb-4">Every step gets checked, not just the last one</h2>
-      <p>In a lab, you don't run a test and only check the final number. You
-      check your reagents, your calibration, your technique, and the result,
-      because an error anywhere in that chain quietly ruins everything after
-      it. I write CSS the same way now. I don't wait until a whole page is
-      built to see if it works. I check the layout after every section, on
-      more than one screen size, because a small mistake early on has a way
-      of multiplying by the time you reach the bottom of the page.</p>
-
-      <h2 class="font-display font-semibold text-2xl text-paper mt-10 mb-4">Documentation isn't optional</h2>
-      <p>Lab work runs on SOPs, standard operating procedures, written so
-      clearly that someone else could follow them without you in the room.
-      I used to think that kind of documentation was just bureaucracy. Now
-      that I write code that clients and other developers will eventually
-      touch, I understand it differently. Clear naming, comments that explain
-      the "why" and not just the "what," a README that actually tells someone
-      how to run the project. That's the same discipline, just aimed at a
-      codebase instead of a lab notebook.</p>
-
-      <h2 class="font-display font-semibold text-2xl text-paper mt-10 mb-4">Precision is a habit, not a personality trait</h2>
-      <p>People sometimes talk about attention to detail like it's something
-      you're born with. In my experience it's closer to a habit you build by
-      repeatedly caring about small things until it stops feeling like extra
-      effort. Pipetting the exact amount, every time, builds that. So does
-      double-checking a media query, or making sure a button's hover state
-      actually looks right on a real phone and not just in dev tools.</p>
-
-      <p>I don't think my biochemistry background makes me a better developer
-      than someone who studied computer science. But it did hand me a set of
-      habits I didn't have to build from scratch, and I'm glad to be bringing
-      them along.</p>
-    </div>
-
-    <div class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <a href="blog.html" class="font-mono text-xs uppercase tracking-widest text-spectro inline-flex items-center gap-2 hover:gap-3 transition-all"><i class="fa-solid fa-arrow-left"></i> Back to blog</a>
-      <a href="contact.html" class="btn-prime inline-flex items-center gap-2 bg-spectro text-ink font-mono text-xs uppercase tracking-widest px-6 py-3 rounded-full font-medium">Let's talk <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
+<section class="grid-field relative pt-40 pb-16 px-6 md:px-10 overflow-hidden">
+  <div class="blob w-72 h-72 bg-assay top-10 -right-16" style="animation-delay:0.4s"></div>
+  <div class="max-w-3xl mx-auto relative z-10">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-spectro mb-4 reveal">Now</p>
+    <h1 class="font-display font-semibold hero-scale-sm leading-tight mb-4 reveal reveal-delay-1">What I'm building right now.</h1>
+    <p class="text-paper/60 text-lg leading-relaxed reveal reveal-delay-2">A short, honest snapshot of what's actually in progress this month, not a highlight reel. Inspired by the <a href="https://nownownow.com/about" target="_blank" rel="noopener" class="text-spectro hover:underline">/now page movement</a>. Last updated: <span id="nowUpdated" class="text-paper/80 font-mono"></span>.</p>
   </div>
-</article>
+</section>
+
+<section class="px-6 md:px-10 pb-20">
+  <div class="max-w-3xl mx-auto space-y-6">
+
+    <div class="border border-white/10 rounded-2xl p-7 bg-inkraise reveal">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-spectro animate-pulse"></span>
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro">Active</p>
+      </div>
+      <h2 class="font-display font-semibold text-xl mb-2">Boardly's ultra redesign</h2>
+      <p class="text-paper/70 leading-relaxed">Working through my own product in phases: vertical-specific modes for logistics, teaching, and freelance work, a Simple/Smart mode split so new users aren't overwhelmed, and continued build-out of the AI assistant and daily digest. <a href="projects/boardly.html" class="text-spectro hover:underline">See the case study &rarr;</a></p>
+    </div>
+
+    <div class="border border-white/10 rounded-2xl p-7 bg-inkraise reveal reveal-delay-1">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-spectro animate-pulse"></span>
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro">Active</p>
+      </div>
+      <h2 class="font-display font-semibold text-xl mb-2">Victorious Concept</h2>
+      <p class="text-paper/70 leading-relaxed">Still in production for my sister's fashion brand: polishing the checkout flow, filling out the admin dashboard, and refining account and order-tracking as real customers start using it. <a href="projects/victorious-concept.html" class="text-spectro hover:underline">See the case study &rarr;</a></p>
+    </div>
+
+    <div class="border border-white/10 rounded-2xl p-7 bg-inkraise reveal reveal-delay-2">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-spectro animate-pulse"></span>
+        <p class="font-mono text-xs uppercase tracking-widest text-spectro">Active</p>
+      </div>
+      <h2 class="font-display font-semibold text-xl mb-2">Teaching Portfolio</h2>
+      <p class="text-paper/70 leading-relaxed">Building out real content and photography for Jennifer Amaka's site as it becomes available; the structure and design system are already locked in. <a href="projects/teaching-portfolio.html" class="text-spectro hover:underline">See the case study &rarr;</a></p>
+    </div>
+
+    <div class="border border-white/10 rounded-2xl p-7 bg-inkraise reveal reveal-delay-3">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-assay"></span>
+        <p class="font-mono text-xs uppercase tracking-widest text-assay">Ongoing</p>
+      </div>
+      <h2 class="font-display font-semibold text-xl mb-2">Social media &amp; the First Experts website</h2>
+      <p class="text-paper/70 leading-relaxed">Day-to-day social media management for First Experts Logistics, plus continued phased redesign of firstexpertslogistics.com as the company's needs change. <a href="projects/first-experts-logistics.html" class="text-spectro hover:underline">See the case study &rarr;</a></p>
+    </div>
+
+    <div class="border border-white/10 rounded-2xl p-7 bg-inkraise reveal">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-paper/40"></span>
+        <p class="font-mono text-xs uppercase tracking-widest text-paper/50">Open to</p>
+      </div>
+      <h2 class="font-display font-semibold text-xl mb-2">New freelance &amp; full-time opportunities</h2>
+      <p class="text-paper/70 leading-relaxed">Remote, hybrid, or on-site, technical or scientific, anywhere in the world. <a href="contact.html" class="text-spectro hover:underline">Get in touch &rarr;</a></p>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
@@ -229,5 +225,6 @@
 <a href="https://wa.me/2349133058119?text=Hi%20Obioma%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 <script src="js/main.js"></script>
+<script>document.getElementById('nowUpdated').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' });</script>
 </body>
 </html>

@@ -124,7 +124,7 @@
 <section class="py-16 px-6 md:px-10 border-t border-white/5">
   <div class="max-w-6xl mx-auto">
 
-    <div id="projectFilters" class="flex flex-wrap gap-3 mb-10 font-mono text-xs uppercase tracking-widest">
+    <div id="projectFilters" class="flex flex-wrap gap-3 mb-6 font-mono text-xs uppercase tracking-widest">
       <button type="button" data-filter="all" class="filter-btn is-active px-5 py-2.5 rounded-full border">All</button>
       <button type="button" data-filter="business" class="filter-btn px-5 py-2.5 rounded-full border">Business</button>
       <button type="button" data-filter="ecommerce" class="filter-btn px-5 py-2.5 rounded-full border">E-commerce</button>
@@ -132,11 +132,24 @@
       <button type="button" data-filter="nonprofit" class="filter-btn px-5 py-2.5 rounded-full border">Nonprofit</button>
     </div>
 
-    <p id="projectFilterEmpty" class="hidden text-paper/50 text-sm mb-10">No projects in this category yet.</p>
+    <div class="flex items-center gap-3 mb-10 font-mono text-xs uppercase tracking-widest">
+      <label for="techFilter" class="text-paper/40">Tech:</label>
+      <select id="techFilter" class="bg-inkraise border border-white/10 rounded-full px-4 py-2 text-paper/80 focus:outline-none focus:border-spectro">
+        <option value="all">All stacks</option>
+        <option value="react">React</option>
+        <option value="supabase">Supabase</option>
+        <option value="tailwind">Tailwind CSS</option>
+        <option value="vanilla">No framework</option>
+        <option value="ai">AI-powered</option>
+      </select>
+    </div>
+
+    <p id="projectFilterEmpty" class="hidden text-paper/50 text-sm mb-10">No projects match these filters yet.</p>
+
 
   <div class="grid md:grid-cols-2 gap-8">
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="ecommerce">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="ecommerce" data-tech="vanilla tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-stride.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · Live</span>
       </div>
@@ -158,9 +171,14 @@
           <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind</span>
           <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
         </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          <a href="https://justixxprime.github.io/stride/" target="_blank" rel="noopener" class="text-spectro font-mono text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">Visit live site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+          <a href="projects/stride.html" class="text-paper/60 font-mono text-sm inline-flex items-center gap-2 hover:gap-3 hover:text-paper transition-all">View case study <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="ecommerce">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="ecommerce" data-tech="react supabase">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-victorious.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · In Development</span>
       </div>
@@ -189,7 +207,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="business">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="business" data-tech="vanilla">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-teaching.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Business · In Development</span>
       </div>
@@ -215,7 +233,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="business">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="business" data-tech="vanilla tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-firstexperts.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Logistics · Live</span>
       </div>
@@ -242,7 +260,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="ecommerce">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="ecommerce" data-tech="vanilla tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-shelemj.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">E-commerce · Live</span>
       </div>
@@ -269,7 +287,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3" data-category="saas">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3" data-category="saas" data-tech="supabase ai">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-boardly.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Productivity · Live</span>
       </div>
@@ -298,7 +316,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="business">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="business" data-tech="vanilla">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-fernhollow.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Hospitality · Live</span>
       </div>
@@ -325,7 +343,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="saas">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-1" data-category="saas" data-tech="tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-pulse.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Dashboard · Live</span>
       </div>
@@ -352,7 +370,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="nonprofit">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-2" data-category="nonprofit" data-tech="tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-amani.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Nonprofit · Live</span>
       </div>
@@ -380,7 +398,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3" data-category="business">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal reveal-delay-3" data-category="business" data-tech="react tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-cheliv.jpg'), linear-gradient(160deg, rgba(51,230,201,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Healthcare · Live</span>
       </div>
@@ -404,7 +422,7 @@
       </div>
     </article>
 
-    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="ecommerce">
+    <article class="info-card border border-white/10 rounded-2xl overflow-hidden bg-inkraise reveal" data-category="ecommerce" data-tech="vanilla tailwind">
       <div class="project-media h-44 flex items-end p-5" style="background-image: url('assets/work-ecommerce.jpg'), linear-gradient(160deg, rgba(242,166,90,0.35), #0B0D10);">
         <span class="font-mono text-xs text-spectro bg-black/40 backdrop-blur px-3 py-1.5 rounded-full">Storefront · Live</span>
       </div>
@@ -497,6 +515,8 @@
           <li><a href="skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
           <li><a href="projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
           <li><a href="experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="resume.html" class="nav-link hover:text-spectro transition-colors" data-page="resume">Résumé</a></li>
+          <li><a href="now.html" class="nav-link hover:text-spectro transition-colors" data-page="now">Now</a></li>
           <li><a href="blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
           <li><a href="contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
         </ul>

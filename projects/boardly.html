@@ -97,6 +97,9 @@
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Tailwind CSS</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">JavaScript</span>
 <span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Supabase</span>
+<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Groq AI</span>
+<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Resend</span>
+<span class="font-mono text-xs border border-white/10 px-3 py-1 rounded-full text-paper/60">Termii SMS</span>
     </div>
   </div>
 </section>
@@ -221,6 +224,21 @@
   </div>
 </section>
 
+<section class="px-6 md:px-10 pb-20 border-t border-white/5 pt-16">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-2 reveal">Under the hood: a real serverless backend</p>
+    <p class="text-paper/60 mb-6 max-w-2xl reveal reveal-delay-1">This is the part that doesn't show up in a screenshot: 14 Supabase Edge Functions running real server-side logic, not just a frontend talking to a database.</p>
+    <ul class="text-paper/70 space-y-4 reveal reveal-delay-2">
+      <li class="flex gap-3"><i class="fa-solid fa-envelope-open-text text-spectro text-sm mt-1"></i><span><strong class="text-paper">A daily digest email, written by AI and sent for real.</strong> Once a day, a scheduled function checks every account for tasks that are overdue or due today, asks a free Groq-hosted model to write a short plain-English summary, and sends it through Resend. Accounts with nothing due get skipped entirely, no empty "you have 0 tasks" email.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-comment-sms text-spectro text-sm mt-1"></i><span><strong class="text-paper">Critical alerts by SMS through Termii</strong>, a Nigerian-founded provider chosen specifically because its "DND" channel is built to bypass Do-Not-Disturb settings and the 8PM–8AM delivery restriction Nigerian carriers otherwise enforce on generic routes, something Twilio has known reliability issues with on Nigerian numbers.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-slack text-spectro text-sm mt-1"></i><span><strong class="text-paper">A real Slack slash command:</strong> typing <code>/addtask Call the printer tomorrow</code> in Slack creates an actual Boardly ticket, verified with Slack's own request signature so it can't be spoofed by anyone else.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-calendar-check text-spectro text-sm mt-1"></i><span><strong class="text-paper">Two-way Google Calendar sync</strong> that creates, updates, or removes a calendar event the moment a task's due date changes, built to fail silently if the calendar sync hiccups so a connection issue never looks like the task itself failed to save.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-plug text-spectro text-sm mt-1"></i><span><strong class="text-paper">Inbound Zapier support</strong> via a webhook endpoint, so a Zap triggered by a new email or form submission can create a real Boardly ticket, built and documented honestly as a webhook integration rather than a published, officially-reviewed Zapier app.</span></li>
+      <li class="flex gap-3"><i class="fa-solid fa-shield-halved text-spectro text-sm mt-1"></i><span><strong class="text-paper">Scheduled background jobs run with a service-role key</strong> (Supabase's own elevated access for background functions), so a job can check every account's tasks for reminders and auto-advance logic while everyday user access still stays fully locked down by Row Level Security.</span></li>
+    </ul>
+  </div>
+</section>
+
 <section class="px-6 md:px-10 pb-20">
   <div class="max-w-4xl mx-auto">
     <p class="font-mono text-xs uppercase tracking-widest text-spectro mb-5 reveal">Screens</p>
@@ -278,6 +296,8 @@
           <li><a href="../skills.html" class="nav-link hover:text-spectro transition-colors" data-page="skills">Skills</a></li>
           <li><a href="../projects.html" class="nav-link hover:text-spectro transition-colors" data-page="projects">Projects</a></li>
           <li><a href="../experience.html" class="nav-link hover:text-spectro transition-colors" data-page="experience">Experience</a></li>
+          <li><a href="../resume.html" class="nav-link hover:text-spectro transition-colors" data-page="resume">Résumé</a></li>
+          <li><a href="../now.html" class="nav-link hover:text-spectro transition-colors" data-page="now">Now</a></li>
           <li><a href="../blog.html" class="nav-link hover:text-spectro transition-colors" data-page="blog">Blog</a></li>
           <li><a href="../contact.html" class="nav-link hover:text-spectro transition-colors" data-page="contact">Contact</a></li>
         </ul>

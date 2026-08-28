@@ -798,18 +798,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initCommandPalette();
 
-  // ---- project category filter (projects.html only) ----------
+  // ---- project category + tech filter (projects.html only) ----------
   function initProjectFilter() {
     const bar = document.getElementById('projectFilters');
     if (!bar) return;
     const buttons = bar.querySelectorAll('.filter-btn');
+    const techSelect = document.getElementById('techFilter');
     const cards = document.querySelectorAll('article[data-category]');
     const emptyMsg = document.getElementById('projectFilterEmpty');
+    let activeCategory = 'all';
 
-    function applyFilter(filter) {
+    function applyFilter() {
+      const activeTech = techSelect ? techSelect.value : 'all';
       let visibleCount = 0;
       cards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category === filter;
+        const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
+        const techList = (card.dataset.tech || '').split(' ');
+        const techMatch = activeTech === 'all' || techList.includes(activeTech);
+        const show = categoryMatch && techMatch;
         card.style.display = show ? '' : 'none';
         if (show) visibleCount++;
       });
@@ -820,9 +826,14 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
-        applyFilter(btn.dataset.filter);
+        activeCategory = btn.dataset.filter;
+        applyFilter();
       });
     });
+
+    if (techSelect) {
+      techSelect.addEventListener('change', applyFilter);
+    }
   }
   initProjectFilter();
 
